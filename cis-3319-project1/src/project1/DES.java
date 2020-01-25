@@ -1,10 +1,14 @@
 package project1;
 
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
+import javax.crypto.*;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.io.*;
+import java.util.*;
+import java.security.*;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import org.apache.commons.codec.binary.Base64;
 
 public class DES {
 
@@ -56,12 +60,9 @@ public class DES {
             else if(mode == 1){
                 //-------------------------------Decryption---------------------------------------->
                 Dcipher.init(Cipher.DECRYPT_MODE,mykey);
+                byte [] decodedBytes =
 
-                byte[] getwords = words.getBytes(StandardCharsets.UTF_8);
-                System.out.println("before: " + getwords);
 
-                byte[] to_words = Dcipher.doFinal(getwords);
-                System.out.println("after: " + to_words);
                 //-------------------------------Decryption Finished------------------------------------>
 
             }
@@ -70,8 +71,8 @@ public class DES {
 
 
 
-        }catch (Exception ignored){
-
+        } catch (NoSuchAlgorithmException | InvalidKeyException | NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException e) {
+            e.printStackTrace();
         }
 
     }
