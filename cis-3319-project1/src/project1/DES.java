@@ -28,7 +28,9 @@ public class DES {
             //Basic setup ---------------------------------->
             KeyGenerator kg = KeyGenerator.getInstance("DES");
             SecretKey mykey = kg.generateKey();
-            Cipher cipher = Cipher.getInstance("DES");
+
+            Cipher Ecipher = Cipher.getInstance("DES");;
+            Cipher Dcipher =  Cipher.getInstance("DES");;;
 
             //Basic setup Finished-------------------------->
 
@@ -44,8 +46,8 @@ public class DES {
 
                 //-------------------------------Encryption---------------------------------------->
                 // Encrypt the words
-                cipher.init(Cipher.ENCRYPT_MODE,mykey);
-                byte[] outcome_from_cipher = cipher.doFinal(words_in_bytes);
+                Ecipher.init(Cipher.ENCRYPT_MODE,mykey);
+                byte[] outcome_from_cipher = Ecipher.doFinal(words_in_bytes);
                 System.out.println("After Encrypt : " + outcome_from_cipher);
                 System.out.println("New String : " + new String(outcome_from_cipher) + "\n");
                 //-------------------------------Encryption Finished------------------------------->
@@ -53,14 +55,13 @@ public class DES {
             }
             else if(mode == 1){
                 //-------------------------------Decryption---------------------------------------->
-                cipher.init(Cipher.DECRYPT_MODE,mykey);
+                Dcipher.init(Cipher.DECRYPT_MODE,mykey);
 
+                byte[] getwords = words.getBytes(StandardCharsets.UTF_8);
+                System.out.println("before: " + getwords);
 
-                byte[] byteStr = words.getBytes(StandardCharsets.UTF_8);
-                System.out.println("before: " + byteStr);
-
-                byte[] to_words = cipher.doFinal(byteStr);
-                System.out.println("after");
+                byte[] to_words = Dcipher.doFinal(getwords);
+                System.out.println("after: " + to_words);
                 //-------------------------------Decryption Finished------------------------------------>
 
             }
