@@ -58,9 +58,9 @@ public class DES {
 
                 byte[] byteStr = words.getBytes(StandardCharsets.UTF_8);
                 System.out.println("before: " + byteStr);
+
                 byte[] to_words = cipher.doFinal(byteStr);
                 System.out.println("after");
-                System.out.println("Decipher : " + to_words);
                 //-------------------------------Decryption Finished------------------------------------>
 
             }
