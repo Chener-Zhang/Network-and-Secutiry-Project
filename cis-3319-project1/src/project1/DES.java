@@ -7,11 +7,17 @@ import java.util.Arrays;
 
 public class DES {
 
+
+
+
     public static void main(String[] args) {
-            encrypt("hello world");
+        Cipher("hello world",0,null);
+
     }
 
-    public static void encrypt(String words){
+    //0 - > encrypt
+    // 1 - > decrypt
+    public static void Cipher(String words, int mode, byte[] secrete_message){
         try{
 
             /*
@@ -33,27 +39,42 @@ public class DES {
             System.out.println("Original words: " + new String(words_in_bytes) + "\n");
             // Convert the worlds in to bytes mode Finished -------------------------------->
 
+            if (mode == 0) {
 
-            //-------------------------------Encryption---------------------------------------->
-            // Encrypt the words
-            byte[] outcome_from_cipher = cipher.doFinal(words_in_bytes);
-            System.out.println("After Cipher : " + outcome_from_cipher);
-            System.out.println("New String : " + new String(outcome_from_cipher) + "\n");
-            //-------------------------------Encryption Finished------------------------------->
+                //-------------------------------Encryption---------------------------------------->
+                // Encrypt the words
+                byte[] outcome_from_cipher = cipher.doFinal(words_in_bytes);
+                System.out.println("After Cipher : " + outcome_from_cipher);
+                System.out.println("New String : " + new String(outcome_from_cipher) + "\n");
+                //-------------------------------Encryption Finished------------------------------->
 
 
 
-            //-------------------------------Decryption---------------------------------------->
-            cipher.init(Cipher.DECRYPT_MODE,mykey);
-            byte[] to_words = cipher.doFinal(outcome_from_cipher);
-            System.out.println("Decipher : " + new String(to_words));
-            //-------------------------------Decryption Finished------------------------------------>
+            }
+
+            else if(mode == 1){
+                //-------------------------------Decryption---------------------------------------->
+                cipher.init(Cipher.DECRYPT_MODE,mykey);
+                byte[] to_words = cipher.doFinal(words.getBytes());
+                System.out.println("Decipher : " + new String(to_words));
+                //-------------------------------Decryption Finished------------------------------------>
+
+            }
+
+
+
+
+
+
+
+
 
         }catch (Exception ignored){
 
         }
 
     }
+
 
 
 }
