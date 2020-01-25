@@ -12,7 +12,7 @@ public class DES {
 
 
     public static void main(String[] args) {
-
+        //Cipher("hello world",0);
         Cipher("[B@762efe5d",1);
 
     }
@@ -29,7 +29,7 @@ public class DES {
             KeyGenerator kg = KeyGenerator.getInstance("DES");
             SecretKey mykey = kg.generateKey();
             Cipher cipher = Cipher.getInstance("DES");
-            cipher.init(Cipher.ENCRYPT_MODE,mykey);
+
             //Basic setup Finished-------------------------->
 
 
@@ -44,6 +44,7 @@ public class DES {
 
                 //-------------------------------Encryption---------------------------------------->
                 // Encrypt the words
+                cipher.init(Cipher.ENCRYPT_MODE,mykey);
                 byte[] outcome_from_cipher = cipher.doFinal(words_in_bytes);
                 System.out.println("After Encrypt : " + outcome_from_cipher);
                 System.out.println("New String : " + new String(outcome_from_cipher) + "\n");
@@ -53,21 +54,16 @@ public class DES {
             else if(mode == 1){
                 //-------------------------------Decryption---------------------------------------->
                 cipher.init(Cipher.DECRYPT_MODE,mykey);
-                //System.out.println("The words is :" + words);
-                //int len = words.length();
-                //System.out.println(len);
+
 
                 byte[] byteStr = words.getBytes(StandardCharsets.UTF_8);
-                System.out.println(byteStr);
+                System.out.println("before: " + byteStr);
                 byte[] to_words = cipher.doFinal(byteStr);
+                System.out.println("after");
                 System.out.println("Decipher : " + to_words);
                 //-------------------------------Decryption Finished------------------------------------>
 
             }
-
-
-
-
 
 
 
