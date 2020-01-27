@@ -60,13 +60,14 @@ public class DES {
             else if(mode == 1){
                 //-------------------------------Decryption---------------------------------------->
                 Dcipher.init(Cipher.DECRYPT_MODE,mykey);
-                byte [] decodedBytes =
-
+                
+                byte[] getwords = words.getBytes(StandardCharsets.UTF_8);
+                byte[] to_words = Dcipher.doFinal(getwords);
+                System.out.println("Decrypt: " + to_words);
 
                 //-------------------------------Decryption Finished------------------------------------>
 
             }
-
 
 
 
