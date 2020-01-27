@@ -3,12 +3,12 @@ package project1;
 import javax.crypto.*;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+
 import java.io.*;
 import java.util.*;
 import java.security.*;
 import javax.crypto.*;
 import javax.crypto.spec.*;
-import org.apache.commons.codec.binary.Base64;
 
 public class DES {
 
@@ -16,7 +16,7 @@ public class DES {
 
 
     public static void main(String[] args) {
-        //Cipher("hello world",0);
+        Cipher("hello world",0);
         Cipher("[B@762efe5d",1);
 
     }
@@ -60,7 +60,6 @@ public class DES {
             else if(mode == 1){
                 //-------------------------------Decryption---------------------------------------->
                 Dcipher.init(Cipher.DECRYPT_MODE,mykey);
-                byte [] decodedBytes =
 
 
                 //-------------------------------Decryption Finished------------------------------------>
