@@ -1,22 +1,25 @@
 package project1;
 
 import javax.crypto.*;
+import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-
-import java.io.*;
-import java.util.*;
-import java.security.*;
-import javax.crypto.*;
-import javax.crypto.spec.*;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Base64.Encoder;
 
 public class DES {
 
 
-
-
     public static void main(String[] args) {
+        //works!
         Cipher("hello world",0);
+
+        //not works!!!
         Cipher("[B@762efe5d",1);
 
     }
@@ -41,12 +44,13 @@ public class DES {
 
             if (mode == 0) {
                 // Convert the worlds in to bytes mode  ---------------------------------------->
-                byte[] words_in_bytes  = words.getBytes();
-                // Print out the words in bytes
-                System.out.println("\nwords -> Bytes : " + words_in_bytes);
+                byte[] words_in_bytes  = words.getBytes("UTF8");
                 // Print out the original words
                 System.out.println("Original words: " + new String(words_in_bytes) + "\n");
+                // Print out the words in bytes
+                System.out.println("\nwords -> Bytes : " + words_in_bytes);
                 // Convert the worlds in to bytes mode Finished -------------------------------->
+
 
                 //-------------------------------Encryption---------------------------------------->
                 // Encrypt the words
@@ -61,8 +65,10 @@ public class DES {
                 //-------------------------------Decryption---------------------------------------->
                 Dcipher.init(Cipher.DECRYPT_MODE,mykey);
 
-                byte[] getwords = words.getBytes(StandardCharsets.UTF_8);
-                byte[] to_words = Dcipher.doFinal(getwords);
+                byte[] dec = new sun.misc.BASE64Decoder().decodeBuffer(words);
+                byte[] utf8 = Dcipher.doFinal(dec);
+
+                byte[] to_words = Dcipher.doFinal(utf8);
                 System.out.println("Decrypt: " + to_words);
 
                 //-------------------------------Decryption Finished------------------------------------>
@@ -72,11 +78,12 @@ public class DES {
 
 
 
-        } catch (NoSuchAlgorithmException | InvalidKeyException | NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException e) {
+        } catch (NoSuchAlgorithmException | InvalidKeyException | NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException | IOException e) {
             e.printStackTrace();
         }
 
     }
+
 
 
 
