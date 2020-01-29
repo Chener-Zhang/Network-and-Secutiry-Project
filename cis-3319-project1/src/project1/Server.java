@@ -1,16 +1,13 @@
 package project1;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 import java.net.*;
 import java.io.*;
 
 public class Server
 {
+<<<<<<< HEAD
     //initialize socket and input stream
     private Socket          socket   = null;
     private ServerSocket    server   = null;
@@ -68,6 +65,7 @@ public class Server
     public static void main(String args[])
     {
         Server server = new Server(5000);
+=======
+>>>>>>> 255fefb4cfc9a37bab0a6ebf5814e62135d86370
 
-    }
 }

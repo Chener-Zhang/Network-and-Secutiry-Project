@@ -4,6 +4,7 @@ package project1;
 import java.net.*;
 import java.io.*;
 
+<<<<<<< HEAD
 public class Client
 {
     // initialize socket and input output streams
@@ -72,6 +73,20 @@ public class Client
 
 
         Client client = new Client("127.0.0.1", 5000);
+=======
+public class Client {
+    public static void main(String[] args) {
+        try {
+            Socket s = new Socket("127.0.0.1",5000);
+            
+
+            System.out.println();
+        } catch (UnknownHostException e) {
+            System.out.println("IP not found" + e);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+>>>>>>> 255fefb4cfc9a37bab0a6ebf5814e62135d86370
     }
 
 }
