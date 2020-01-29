@@ -5,20 +5,17 @@ package project1;
 import java.net.*;
 import java.io.*;
 
-public class Server
-{
-<<<<<<< HEAD
+public class Server {
+
     //initialize socket and input stream
-    private Socket          socket   = null;
-    private ServerSocket    server   = null;
-    private DataInputStream in       =  null;
+    private Socket socket = null;
+    private ServerSocket server = null;
+    private DataInputStream in = null;
 
     // constructor with port
-    public Server(int port)
-    {
+    public Server(int port) {
         // starts server and waits for a connection
-        try
-        {
+        try {
             server = new ServerSocket(port);
             System.out.println("Server started");
 
@@ -30,23 +27,19 @@ public class Server
             // takes input from the client socket
 
             in = new DataInputStream(
-                   new BufferedInputStream(socket.getInputStream()));
+                    new BufferedInputStream(socket.getInputStream()));
 
             String line = "";
 
             // reads message from client until "Over" is sent
             // Edit here for cipher project
-            while (!line.equals("Over"))
-            {
-                try
-                {
+            while (!line.equals("Over")) {
+                try {
                     line = in.readUTF();
 
                     System.out.println(line);
 
-                }
-                catch(IOException i)
-                {
+                } catch (IOException i) {
                     System.out.println(i);
                 }
             }
@@ -55,17 +48,14 @@ public class Server
             // close connection
             socket.close();
             in.close();
-        }
-        catch(IOException i)
-        {
+        } catch (IOException i) {
             System.out.println(i);
         }
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         Server server = new Server(5000);
-=======
->>>>>>> 255fefb4cfc9a37bab0a6ebf5814e62135d86370
 
+
+    }
 }
