@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 public class DES {
 
     Cipher DESCipher;
-    KeyGenerator keygenerator;
+    KeyGenerator KEY_generator;
     SecretKey myDesKey;
     byte[] textEncrypted;
 
@@ -17,7 +17,7 @@ public class DES {
             KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
             SecretKey myDesKey = keygenerator.generateKey();
 
-            this.keygenerator = keygenerator;
+            this.KEY_generator = keygenerator;
             this.myDesKey = myDesKey;
         }catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
