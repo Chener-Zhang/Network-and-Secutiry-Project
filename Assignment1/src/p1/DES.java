@@ -1,5 +1,3 @@
-package p1;
-
 import javax.crypto.*;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -38,12 +36,12 @@ public class DES {
             DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
             // Initialize the cipher for encryption
-            DESCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
-
+            DESCipher.init(Cipher.ENCRYPT_MODE, myDesKey);            
+            getkey();
             //sensitive information
             byte[] text = user_input.getBytes();
 
-           //System.out.println("Text [Byte Format] : " + text);
+            //System.out.println("Text [Byte Format] : " + text);
             //System.out.println("Text : " + new String(text));
 
             // Encrypt the text
@@ -59,19 +57,30 @@ public class DES {
     }
 
 
-    public byte[] Decrypt(byte input[]) {
-        try {
-            // Initialize the same cipher for decryption
-            DESCipher.init(Cipher.DECRYPT_MODE, myDesKey);
+    public SecretKey getkey(){
+        return myDesKey;
+    }
+    
+    public byte[] Decrypt(byte input[], SecretKey the_key) {
+            try {
+                DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+
+                // Initialize the same cipher for decryption
+            DESCipher.init(Cipher.DECRYPT_MODE, the_key);
 
             // Decrypt the text
             byte[] textDecrypted = DESCipher.doFinal(input);
 
-            //System.out.println("Text Decryted : " + new String(textDecrypted));
+            System.out.println("Text Decryted : " + new String(textDecrypted));
             return textDecrypted;
+
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException e) {
             e.printStackTrace();
-        }
+        } catch (NoSuchPaddingException e) {
+                e.printStackTrace();
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
         return null;
     }
 
