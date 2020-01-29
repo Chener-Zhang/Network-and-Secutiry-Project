@@ -16,9 +16,7 @@ public class Server {
         try {
             server = new ServerSocket(port);
             System.out.println("Server started");
-
             System.out.println("Waiting for a client ...");
-
             socket = server.accept();
             System.out.println("Client accepted");
 
@@ -33,9 +31,10 @@ public class Server {
             // Edit here for cipher project
             while (!line.equals("Over")) {
                 try {
-                    
-                    line = in.readUTF();                    
+
+                    line = in.readUTF();
                     //System.out.println(line);
+
                     DataInputStream dIn = new DataInputStream(socket.getInputStream());
                     int length = dIn.readInt();    
                     byte[] message = new byte[length];// read length of incoming message
@@ -45,7 +44,7 @@ public class Server {
 
                     System.out.println("The message you received is :" + message);
                     System.out.println("In String is :" + Arrays.toString(message));
-                    
+
 
                     //get the key object
                     InputStream inputStream = socket.getInputStream();
@@ -63,6 +62,7 @@ public class Server {
                     System.out.println(i);
                 }
             }
+
             System.out.println("Closing connection");
 
             // close connection

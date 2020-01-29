@@ -1,4 +1,4 @@
-package p1;
+import javax.crypto.SecretKey;
 
 
 class main {
@@ -6,12 +6,11 @@ class main {
     public static void main(String[] args) {
 
 
-        /*
-
-        DES cipher_test = new DES();
-        byte[] encrypt = cipher_test.Encrypt("this is the class 3319\n");
-        byte[] orignal = cipher_test.Decrypt(encrypt);
-        */
+        
+    DES cipher_test = new DES();
+        byte[] encrypt = cipher_test.Encrypt("whatever\n");
+        SecretKey key = cipher_test.getkey();
+        byte[] orignal = cipher_test.Decrypt(encrypt,key);
 
 
     }
