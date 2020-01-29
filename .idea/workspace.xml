@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72e2e7c1-7a93-4056-a16b-caaa41fa48f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cis-3319-project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cis-3319-project1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +54,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="176" width="1092" height="704" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580270294309">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="176" width="1092" height="704" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580270294309" />
+    <state x="689" y="313" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1580270293956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="313" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580270293956" />
+    <state x="803" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580270261257">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="803" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580270261257" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1580005003245">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

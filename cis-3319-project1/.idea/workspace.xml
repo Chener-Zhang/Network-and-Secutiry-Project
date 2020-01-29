@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afd3394c-a78d-4b1d-9f90-3aa6390092c2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cis-3319-project1/project1/DES.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cis-3319-project1/project1/DES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/DES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/DES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/MyCipher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/MyCipher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project1/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project1/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,20 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.MyCipher">
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project1.Client" />
+      <module name="cis-3319-project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DES" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project1.DES" />
       <module name="cis-3319-project1" />
@@ -73,18 +86,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="project1.Main" />
+    <configuration name="MyCipher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project1.MyCipher" />
       <module name="cis-3319-project1" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyCipher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="project1.MyCipher" />
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project1.Server" />
       <module name="cis-3319-project1" />
       <extension name="coverage">
         <pattern>
@@ -99,11 +115,14 @@
     <list>
       <item itemvalue="Application.DES" />
       <item itemvalue="Application.Key" />
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.MyCipher" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.MyCipher" />
         <item itemvalue="Application.DES" />
         <item itemvalue="Application.Key" />
@@ -148,22 +167,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="735" y="371" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580006190618" />
-    <state width="1877" height="147" key="GridCell.Tab.0.bottom" timestamp="1580267474862">
+    <state width="1877" height="147" key="GridCell.Tab.0.bottom" timestamp="1580270716742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="147" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580267474862" />
-    <state width="1877" height="147" key="GridCell.Tab.0.center" timestamp="1580267474862">
+    <state width="1877" height="147" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580270716742" />
+    <state width="1877" height="147" key="GridCell.Tab.0.center" timestamp="1580270716742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="147" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580267474862" />
-    <state width="1877" height="147" key="GridCell.Tab.0.left" timestamp="1580267474862">
+    <state width="1877" height="147" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580270716742" />
+    <state width="1877" height="147" key="GridCell.Tab.0.left" timestamp="1580270716742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="147" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580267474862" />
-    <state width="1877" height="147" key="GridCell.Tab.0.right" timestamp="1580267474862">
+    <state width="1877" height="147" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580270716742" />
+    <state width="1877" height="147" key="GridCell.Tab.0.right" timestamp="1580270716742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="147" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580267474862" />
+    <state width="1877" height="147" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580270716742" />
     <state width="1877" height="300" key="GridCell.Tab.1.bottom" timestamp="1580248956108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -188,10 +207,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1580266324772" />
-    <state x="636" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1580265268699">
+    <state x="636" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1580270313622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580265268699" />
+    <state x="636" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580270313622" />
     <state x="646" y="106" width="627" height="834" key="find.popup" timestamp="1579990950861">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

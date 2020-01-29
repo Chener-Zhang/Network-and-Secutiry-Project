@@ -43,8 +43,11 @@ public class Client
         {
             try
             {
+                //Write the encryption here;
+                
                 line = input.readLine();
                 out.writeUTF(line);
+
             }
             catch(IOException i)
             {
@@ -68,7 +71,7 @@ public class Client
     public static void main(String[] argv) throws Exception {
 
 
-        Client client = new Client("129.32.93.67", 5000);
+        Client client = new Client("127.0.0.1", 5000);
     }
 
 }

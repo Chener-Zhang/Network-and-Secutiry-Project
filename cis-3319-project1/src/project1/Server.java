@@ -31,17 +31,20 @@ public class Server
             System.out.println("Client accepted");
 
             // takes input from the client socket
+
             in = new DataInputStream(
-                    new BufferedInputStream(socket.getInputStream()));
+                   new BufferedInputStream(socket.getInputStream()));
 
             String line = "";
 
             // reads message from client until "Over" is sent
+            // Edit here for cipher project
             while (!line.equals("Over"))
             {
                 try
                 {
                     line = in.readUTF();
+
                     System.out.println(line);
 
                 }
