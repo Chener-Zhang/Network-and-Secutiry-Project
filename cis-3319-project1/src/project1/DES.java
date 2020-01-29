@@ -13,13 +13,19 @@ public class DES {
 
 
     public DES() {
-        try{
+        // Init the setting for the key generator;
+        try {
             KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
             SecretKey myDesKey = keygenerator.generateKey();
 
+            //init the local var to global;
+
             this.KEY_generator = keygenerator;
             this.myDesKey = myDesKey;
-        }catch (NoSuchAlgorithmException e) {
+
+
+            // catch the exception just in case
+        } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
 
@@ -28,7 +34,6 @@ public class DES {
 
     public byte[] Encrypt(String user_input) {
         try {
-
             // Create the cipher
             DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
@@ -54,25 +59,21 @@ public class DES {
     }
 
 
-
-    public byte[] Decrypt(byte input[]){
-        try{
+    public byte[] Decrypt(byte input[]) {
+        try {
             // Initialize the same cipher for decryption
             DESCipher.init(Cipher.DECRYPT_MODE, myDesKey);
 
             // Decrypt the text
-            byte[] textDecrypted = DESCipher.doFinal(textEncrypted);
+            byte[] textDecrypted = DESCipher.doFinal(input);
 
             System.out.println("Text Decryted : " + new String(textDecrypted));
             return textDecrypted;
-        }catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException e) {
+        } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException e) {
             e.printStackTrace();
         }
-       return null;
+        return null;
     }
-
-
-
 
 
 }
