@@ -1,58 +1,68 @@
 package project1;
 
 import javax.crypto.*;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SecretKey;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.Base64.Decoder;
-import java.util.Base64.Encoder;
 
 public class DES {
 
+    Cipher desCipher;
+    KeyGenerator keygenerator;
+    SecretKey myDesKey;
+    byte[] textEncrypted;
 
-    public static void main(String[] args) {
-        byte[] final_word_in_byte = Cipher("hello world",0,null);
-        System.out.println(Arrays.toString(final_word_in_byte));
 
-        byte[] original = Cipher(null,1,final_word_in_byte);
-        System.out.println(Arrays.toString(original));
+    public DES() {
+        try{
+            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
+            SecretKey myDesKey = keygenerator.generateKey();
+
+            this.keygenerator = keygenerator;
+            this.myDesKey = myDesKey;
+        }catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
     }
 
-    //0 - > encrypt
-    // 1 - > decrypt
-    public static byte[] Cipher(String words, int mode,byte[] raw){
+
+    public byte[] Encrypt(String user_input) {
+        try {
+
+            // Create the cipher
+            desCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+
+            // Initialize the cipher for encryption
+            desCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
+
+            //sensitive information
+            byte[] text = user_input.getBytes();
+
+            System.out.println("Text [Byte Format] : " + text);
+            System.out.println("Text : " + new String(text));
+
+            // Encrypt the text
+            byte[] FINAL_TEXT = desCipher.doFinal(text);
+            this.textEncrypted = FINAL_TEXT;
+            System.out.println("Text Encryted : " + textEncrypted);
+        } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
+    public byte[] Decrypt(){
         try{
+            // Initialize the same cipher for decryption
+            desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
 
-            if (mode == 0)
-            {
-                KeyGenerator kg = KeyGenerator.getInstance("DES");
-                SecretKey mykey = kg.generateKey();
-                Cipher Encipher = Cipher.getInstance("DES");
-                byte[] words_in_bytes  = words.getBytes(StandardCharsets.UTF_8);
-                Encipher.init(Cipher.ENCRYPT_MODE,mykey);
-                return Encipher.doFinal(words_in_bytes);
-            }
+            // Decrypt the text
+            byte[] textDecrypted = desCipher.doFinal(textEncrypted);
 
-
-            else if(mode == 1){
-                KeyGenerator kg = KeyGenerator.getInstance("DES");
-                SecretKey second_key = kg.generateKey();
-                Cipher Decipher =  Cipher.getInstance("DES");
-                Decipher.init(Cipher.DECRYPT_MODE,second_key);
-                return Decipher.doFinal(raw);
-            }
-
-
-
-
-        } catch (NoSuchAlgorithmException | InvalidKeyException | NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException e) {
+            System.out.println("Text Decryted : " + new String(textDecrypted));
+        }catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException e) {
             e.printStackTrace();
         }
         return null;
@@ -61,6 +71,10 @@ public class DES {
 
 
 
+
 }
+
+
+
 
 
