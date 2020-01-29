@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="afd3394c-a78d-4b1d-9f90-3aa6390092c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/project1/MyCipher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cis-3319-project1/project1/DES.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cis-3319-project1/project1/DES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/DES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/DES.java" afterDir="false" />
-    </list>
+    <list default="true" id="afd3394c-a78d-4b1d-9f90-3aa6390092c2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
