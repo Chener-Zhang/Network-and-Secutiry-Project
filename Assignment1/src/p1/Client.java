@@ -1,6 +1,7 @@
-package p1;// A Java program for a Client
 import java.net.*;
 import java.io.*;
+import java.util.Arrays;
+import javax.crypto.SecretKey;
 
 public class Client
 {
@@ -43,11 +44,21 @@ public class Client
             {
 
                 line = input.readLine();
-                byte[] encrypt = cipher_test.Encrypt(line);
-                System.out.println("You have enter : " + line);
-                System.out.println("The message you have send is" + encrypt);
-                //out.writeUTF(line);
-                out.write(encrypt);
+                byte[] message = cipher_test.Encrypt(line);
+                System.out.println("You have enter : " + line);                
+                out.writeUTF(line);
+                DataOutputStream dOut = new DataOutputStream(socket.getOutputStream());
+                dOut.writeInt(message.length); 
+                dOut.write(message);           
+                System.out.println("After encrypted:  " + message);
+                System.out.println(Arrays.toString(message)+"\n\n");
+                
+                //send object
+                OutputStream outputStream = socket.getOutputStream();
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+                objectOutputStream.writeObject(cipher_test.getkey());
+                System.out.println("The key you send \n" + cipher_test.getkey().getEncoded());
+                System.out.println("in String :\n" + Arrays.toString(cipher_test.getkey().getEncoded()));
 
             }
             catch(IOException i)
