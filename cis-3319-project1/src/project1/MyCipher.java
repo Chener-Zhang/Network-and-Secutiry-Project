@@ -5,7 +5,18 @@ class MyCipher{
 
     public static void main(String[] args) {
         DES item = new DES();
-        item.Encrypt("this is me ");
-        item.Decrypt();
+
+        byte[]in = item.Encrypt("my name is chener");
+
+        byte[] out = item.Decrypt(in);
+
+
+
+
+
+
+
+
+
     }
 }

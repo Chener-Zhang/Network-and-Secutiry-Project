@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class DES {
 
-    Cipher desCipher;
+    Cipher DESCipher;
     KeyGenerator keygenerator;
     SecretKey myDesKey;
     byte[] textEncrypted;
@@ -30,10 +30,10 @@ public class DES {
         try {
 
             // Create the cipher
-            desCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+            DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
             // Initialize the cipher for encryption
-            desCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
+            DESCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
 
             //sensitive information
             byte[] text = user_input.getBytes();
@@ -42,9 +42,11 @@ public class DES {
             System.out.println("Text : " + new String(text));
 
             // Encrypt the text
-            byte[] FINAL_TEXT = desCipher.doFinal(text);
+            byte[] FINAL_TEXT = DESCipher.doFinal(text);
             this.textEncrypted = FINAL_TEXT;
             System.out.println("Text Encryted : " + textEncrypted);
+            return textEncrypted;
+
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
             e.printStackTrace();
         }
@@ -53,19 +55,20 @@ public class DES {
 
 
 
-    public byte[] Decrypt(){
+    public byte[] Decrypt(byte input[]){
         try{
             // Initialize the same cipher for decryption
-            desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
+            DESCipher.init(Cipher.DECRYPT_MODE, myDesKey);
 
             // Decrypt the text
-            byte[] textDecrypted = desCipher.doFinal(textEncrypted);
+            byte[] textDecrypted = DESCipher.doFinal(textEncrypted);
 
             System.out.println("Text Decryted : " + new String(textDecrypted));
+            return textDecrypted;
         }catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException e) {
             e.printStackTrace();
         }
-        return null;
+       return null;
     }
 
 
