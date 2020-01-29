@@ -32,17 +32,23 @@ public class Client
         {
             System.out.println(i);
         }
-
+        //<---------------------------------------------------------------------------->
         // string to read message from input
         String line = "";
-
+        DES cipher_test = new DES();
         // keep reading until "Over" is input
         while (!line.equals("Over"))
         {
             try
             {
+
                 line = input.readLine();
-                out.writeUTF(line);
+                byte[] encrypt = cipher_test.Encrypt(line);
+                System.out.println("You have enter : " + line);
+                System.out.println("The message you have send is" + encrypt);
+                //out.writeUTF(line);
+                out.write(encrypt);
+
             }
             catch(IOException i)
             {
@@ -51,6 +57,8 @@ public class Client
         }
 
         // close the connection
+        //<---------------------------------------------------------------------------->
+
         try
         {
             input.close();

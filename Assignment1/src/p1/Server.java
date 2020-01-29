@@ -30,14 +30,15 @@ public class Server {
                     new BufferedInputStream(socket.getInputStream()));
 
             String line = "";
-
+            byte receive[];
             // reads message from client until "Over" is sent
             // Edit here for cipher project
             while (!line.equals("Over")) {
                 try {
                     line = in.readUTF();
-
+                    receive = in.readAllBytes();
                     System.out.println(line);
+                    System.out.println(receive);
 
                 } catch (IOException i) {
                     System.out.println(i);

@@ -43,13 +43,13 @@ public class DES {
             //sensitive information
             byte[] text = user_input.getBytes();
 
-            System.out.println("Text [Byte Format] : " + text);
-            System.out.println("Text : " + new String(text));
+           //System.out.println("Text [Byte Format] : " + text);
+            //System.out.println("Text : " + new String(text));
 
             // Encrypt the text
             byte[] FINAL_TEXT = DESCipher.doFinal(text);
             this.textEncrypted = FINAL_TEXT;
-            System.out.println("Text Encryted : " + textEncrypted);
+            //System.out.println("Text Encryted : " + textEncrypted);
             return textEncrypted;
 
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
@@ -67,7 +67,7 @@ public class DES {
             // Decrypt the text
             byte[] textDecrypted = DESCipher.doFinal(input);
 
-            System.out.println("Text Decryted : " + new String(textDecrypted));
+            //System.out.println("Text Decryted : " + new String(textDecrypted));
             return textDecrypted;
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException e) {
             e.printStackTrace();
