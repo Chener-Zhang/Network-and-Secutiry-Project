@@ -1,7 +1,10 @@
-import java.net.*;
-import java.io.*;
-import java.util.Arrays;
+package p1;
+
 import javax.crypto.SecretKey;
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Arrays;
 
 public class Server {
 
@@ -73,7 +76,7 @@ public class Server {
         }
     }
 
-    public static void main(String args[]) throws ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException {
         Server server = new Server(5000);
     }
 }

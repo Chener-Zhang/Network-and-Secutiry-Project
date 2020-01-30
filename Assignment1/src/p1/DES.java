@@ -1,3 +1,5 @@
+package p1;
+
 import javax.crypto.*;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -36,7 +38,7 @@ public class DES {
             DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
             // Initialize the cipher for encryption
-            DESCipher.init(Cipher.ENCRYPT_MODE, myDesKey);            
+            DESCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
             getkey();
             //sensitive information
             byte[] text = user_input.getBytes();
@@ -57,15 +59,15 @@ public class DES {
     }
 
 
-    public SecretKey getkey(){
+    public SecretKey getkey() {
         return myDesKey;
     }
-    
-    public byte[] Decrypt(byte input[], SecretKey the_key) {
-            try {
-                DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
-                // Initialize the same cipher for decryption
+    public byte[] Decrypt(byte[] input, SecretKey the_key) {
+        try {
+            DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+
+            // Initialize the same cipher for decryption
             DESCipher.init(Cipher.DECRYPT_MODE, the_key);
 
             // Decrypt the text
@@ -77,10 +79,10 @@ public class DES {
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException e) {
             e.printStackTrace();
         } catch (NoSuchPaddingException e) {
-                e.printStackTrace();
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-            }
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

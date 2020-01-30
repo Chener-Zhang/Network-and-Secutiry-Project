@@ -1,21 +1,20 @@
-import java.net.*;
-import java.io.*;
-import java.util.Arrays;
-import javax.crypto.SecretKey;
+package p1;
 
-public class Client
-{
+import java.io.*;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+
+public class Client {
     // initialize socket and input output streams
-    private Socket socket		 = null;
+    private Socket socket = null;
     private DataInputStream input = null;
-    private DataOutputStream out	 = null;
+    private DataOutputStream out = null;
 
     // constructor to put ip address and port
-    public Client(String address, int port)
-    {
+    public Client(String address, int port) {
         // establish a connection
-        try
-        {
+        try {
             socket = new Socket(address, port);
             System.out.println("Connected");
 
@@ -82,8 +81,7 @@ public class Client
         }
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String[] args) {
         Client client = new Client("127.0.0.1", 5000);
     }
 } 
