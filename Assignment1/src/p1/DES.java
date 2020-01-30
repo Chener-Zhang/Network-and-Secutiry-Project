@@ -43,6 +43,7 @@ public class DES {
             this.textEncrypted = DESCipher.doFinal(text);
 
             //Return the text;
+
             return textEncrypted;
 
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
@@ -70,6 +71,7 @@ public class DES {
             byte[] textDecrypted = DESCipher.doFinal(input);
 
             //Return the text has been decrypted
+            System.out.println("Text Decryted : " + new String(textDecrypted));
             return textDecrypted;
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException | NoSuchAlgorithmException e) {
             e.printStackTrace();
