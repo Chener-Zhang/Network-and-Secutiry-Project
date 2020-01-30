@@ -8,28 +8,24 @@ import java.util.Arrays;
 
 public class Server {
 
-    //initialize socket and input stream
-    private Socket socket = null;
-    private ServerSocket server = null;
-    private DataInputStream in = null;
-
     // constructor with port
     public Server(int port) throws ClassNotFoundException {
         // starts server and waits for a connection
         try {
-            server = new ServerSocket(port);
+            ServerSocket server = new ServerSocket(port);
             System.out.println("Server started");
             System.out.println("Waiting for a client ...");
-            socket = server.accept();
+            //initialize socket and input stream
+            Socket socket = server.accept();
             System.out.println("Client accepted");
 
             // takes input from the client socket
 
-            in = new DataInputStream(
+            DataInputStream in = new DataInputStream(
                     new BufferedInputStream(socket.getInputStream()));
 
             String line = "";
-             DES cipher_test = new DES();
+            DES cipher_test = new DES();
             // reads message from client until "Over" is sent
             // Edit here for cipher project
             while (!line.equals("Over")) {
@@ -45,7 +41,7 @@ public class Server {
                             dIn.readFully(message, 0, message.length); // read the message
                         }
 
-                    System.out.println("The message you received is :" + message);
+                    System.out.println("The message you received is :" + Arrays.toString(message));
                     System.out.println("In String is :" + Arrays.toString(message));
 
 
@@ -54,7 +50,7 @@ public class Server {
                     ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
                     
                     SecretKey key = (SecretKey) objectInputStream.readObject();
-                    System.out.println("The key you received : \n" + key.getEncoded());
+                    System.out.println("The key you received : \n" + Arrays.toString(key.getEncoded()));
                     System.out.println(Arrays.toString(key.getEncoded()));
 
                     System.out.println("You got :");
@@ -62,7 +58,7 @@ public class Server {
                     
                     
                 } catch (IOException i) {
-                    System.out.println(i);
+                    System.out.println(i.toString());
                 }
             }
 
@@ -72,7 +68,7 @@ public class Server {
             socket.close();
             in.close();
         } catch (IOException i) {
-            System.out.println(i);
+            System.out.println(i.toString());
         }
     }
 

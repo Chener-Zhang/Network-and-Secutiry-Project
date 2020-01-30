@@ -2,18 +2,17 @@ package p1;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.Arrays;
 
 public class Client {
-    // initialize socket and input output streams
-    private Socket socket = null;
-    private DataInputStream input = null;
-    private DataOutputStream out = null;
 
     // constructor to put ip address and port
     public Client(String address, int port) {
         // establish a connection
+        // initialize socket and input output streams
+        Socket socket = null;
+        DataInputStream input = null;
+        DataOutputStream out = null;
         try {
             socket = new Socket(address, port);
             System.out.println("Connected");
@@ -23,14 +22,8 @@ public class Client {
 
             // sends output to the socket
             out = new DataOutputStream(socket.getOutputStream());
-        }
-        catch(UnknownHostException u)
-        {
-            System.out.println(u);
-        }
-        catch(IOException i)
-        {
-            System.out.println(i);
+        } catch (IOException u) {
+            System.out.println(u.toString());
         }
         //<---------------------------------------------------------------------------->
         // string to read message from input
@@ -39,30 +32,31 @@ public class Client {
         // keep reading until "Over" is input
         while (!line.equals("Over"))
         {
-            try
-            {
+            try {
 
+                assert input != null;
                 line = input.readLine();
                 byte[] message = cipher_test.Encrypt(line);
-                System.out.println("You have enter : " + line);                
+                System.out.println("You have enter : " + line);
+                assert out != null;
                 out.writeUTF(line);
                 DataOutputStream dOut = new DataOutputStream(socket.getOutputStream());
-                dOut.writeInt(message.length); 
-                dOut.write(message);           
-                System.out.println("After encrypted:  " + message);
-                System.out.println(Arrays.toString(message)+"\n\n");
-                
+                dOut.writeInt(message.length);
+                dOut.write(message);
+                System.out.println("After encrypted:  " + Arrays.toString(message));
+                System.out.println(Arrays.toString(message) + "\n\n");
+
                 //send object
                 OutputStream outputStream = socket.getOutputStream();
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
                 objectOutputStream.writeObject(cipher_test.getkey());
-                System.out.println("The key you send \n" + cipher_test.getkey().getEncoded());
+                System.out.println("The key you send \n" + Arrays.toString(cipher_test.getkey().getEncoded()));
                 System.out.println("in String :\n" + Arrays.toString(cipher_test.getkey().getEncoded()));
 
             }
             catch(IOException i)
             {
-                System.out.println(i);
+                System.out.println(i.toString());
             }
         }
 
@@ -77,7 +71,7 @@ public class Client {
         }
         catch(IOException i)
         {
-            System.out.println(i);
+            System.out.println(i.toString());
         }
     }
 
