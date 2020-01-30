@@ -6,49 +6,43 @@ import java.security.NoSuchAlgorithmException;
 
 public class DES {
 
+    //Declare the var;
+
     Cipher DESCipher;
     KeyGenerator KEY_generator;
     SecretKey myDesKey;
     byte[] textEncrypted;
 
 
+    //Constructor
     public DES() {
-        // Init the setting for the key generator;
         try {
+            //init the var
             KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
             SecretKey myDesKey = keygenerator.generateKey();
-
-            //init the local var to global;
-
             this.KEY_generator = keygenerator;
             this.myDesKey = myDesKey;
-
-
-            // catch the exception just in case
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-
     }
 
 
     public byte[] Encrypt(String user_input) {
         try {
-            // Create the cipher
+            // Create the cipher type as DES
             DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
             // Initialize the cipher for encryption
             DESCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
-            gettingkey();
-            //sensitive information
+
+            //Turn the String of user_input to the byte mode
             byte[] text = user_input.getBytes();
 
-            //System.out.println("Text [Byte Format] : " + text);
-            //System.out.println("Text : " + new String(text));
-
-            // Encrypt the text
+            // Encrypt the text -> Do final
             this.textEncrypted = DESCipher.doFinal(text);
-            //System.out.println("Text Encrypted : " + textEncrypted);
+
+            //Return the text;
             return textEncrypted;
 
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
@@ -58,12 +52,15 @@ public class DES {
     }
 
 
+    //Get the key just in case
     public SecretKey gettingkey() {
         return myDesKey;
     }
 
+
     public byte[] Decrypt(byte[] input, SecretKey the_key) {
         try {
+            //init the Mode
             DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
             // Initialize the same cipher for decryption
@@ -72,15 +69,13 @@ public class DES {
             // Decrypt the text
             byte[] textDecrypted = DESCipher.doFinal(input);
 
-            System.out.println("Text Decryted : " + new String(textDecrypted));
+            //Return the text has been decrypted
             return textDecrypted;
-
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
         return null;
     }
-
 
 }
 
