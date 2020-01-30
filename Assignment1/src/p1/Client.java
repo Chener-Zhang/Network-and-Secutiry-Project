@@ -49,9 +49,9 @@ public class Client {
                 //send object
                 OutputStream outputStream = socket.getOutputStream();
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-                objectOutputStream.writeObject(cipher_test.getkey());
-                System.out.println("The key you send \n" + Arrays.toString(cipher_test.getkey().getEncoded()));
-                System.out.println("in String :\n" + Arrays.toString(cipher_test.getkey().getEncoded()));
+                objectOutputStream.writeObject(cipher_test.gettingkey());
+                System.out.println("The key you send \n" + Arrays.toString(cipher_test.gettingkey().getEncoded()));
+                System.out.println("in String :\n" + Arrays.toString(cipher_test.gettingkey().getEncoded()));
 
             }
             catch(IOException i)

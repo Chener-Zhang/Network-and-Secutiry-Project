@@ -39,7 +39,7 @@ public class DES {
 
             // Initialize the cipher for encryption
             DESCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
-            getkey();
+            gettingkey();
             //sensitive information
             byte[] text = user_input.getBytes();
 
@@ -47,9 +47,8 @@ public class DES {
             //System.out.println("Text : " + new String(text));
 
             // Encrypt the text
-            byte[] FINAL_TEXT = DESCipher.doFinal(text);
-            this.textEncrypted = FINAL_TEXT;
-            //System.out.println("Text Encryted : " + textEncrypted);
+            this.textEncrypted = DESCipher.doFinal(text);
+            //System.out.println("Text Encrypted : " + textEncrypted);
             return textEncrypted;
 
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
@@ -59,7 +58,7 @@ public class DES {
     }
 
 
-    public SecretKey getkey() {
+    public SecretKey gettingkey() {
         return myDesKey;
     }
 
@@ -76,11 +75,7 @@ public class DES {
             System.out.println("Text Decryted : " + new String(textDecrypted));
             return textDecrypted;
 
-        } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
+        } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
         return null;

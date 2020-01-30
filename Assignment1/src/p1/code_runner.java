@@ -9,7 +9,7 @@ class code_runner {
 
         DES cipher_test = new DES();
         byte[] encrypt = cipher_test.Encrypt("whatever\n");
-        SecretKey key = cipher_test.getkey();
+        SecretKey key = cipher_test.gettingkey();
         byte[] original = cipher_test.Decrypt(encrypt, key);
 
 
