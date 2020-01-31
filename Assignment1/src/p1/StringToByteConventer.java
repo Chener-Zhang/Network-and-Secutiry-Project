@@ -39,14 +39,14 @@ public class StringToByteConventer {
 
             int i = Integer.parseInt(assgn);
             byte b1 = (byte) i;
-            //System.out.println(b1);
+            
             Final_byte_Arr[counter] = b1;
             counter++;
         }
         System.out.println(Final_byte_Arr);
         System.out.println(Arrays.toString(Final_byte_Arr));
 
-        return null;
+        return Final_byte_Arr;
     }
 
 
