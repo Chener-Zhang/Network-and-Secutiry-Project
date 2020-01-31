@@ -9,24 +9,13 @@ class code_runner {
 
     public static void main(String[] args) {
         DES item = new DES();
-            byte[] message =item.Encrypt("hello world");
-            //System.out.println(message);
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter the message");
-            String user_enter = sc.nextLine();  // Read user input
-            System.out.println("The user has enter :" + user_enter);
+        byte[] message =item.Encrypt("hello world");
+        System.out.println(Arrays.toString(message));
+
+        conventer c = new conventer(Arrays.toString(message));
 
 
-            StringToByteConventer conver = new StringToByteConventer(user_enter);
-
-            byte[] final_message = conver.get_byte_from_string();
-
-
-
-
-
-
-
+        item.Decrypt(c.breaker(),item.gettingkey());
 
     }
 }

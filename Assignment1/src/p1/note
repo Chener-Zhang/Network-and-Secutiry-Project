@@ -1,0 +1,22 @@
+/*
+*   int len = Cipher_text_in_string_1.length();
+        StringTokenizer MySt = new StringTokenizer(ArrayToString_Cipher_text_in_string_Get_Byte_3,"[]");
+        String dele_begin_end =  MySt.nextToken();
+        //System.out.println(dele_begin_end);
+
+        StringTokenizer multiTokenizer = new StringTokenizer(dele_begin_end, ", ");
+        Final_byte_Arr = new byte[len];
+        int counter = 0;
+
+        while (multiTokenizer.hasMoreTokens())
+        {
+            String assgn = multiTokenizer.nextToken();
+
+            int i = Integer.parseInt(assgn);
+            byte b1 = (byte) i;
+
+            Final_byte_Arr[counter] = b1;
+            counter++;
+        }
+
+*/

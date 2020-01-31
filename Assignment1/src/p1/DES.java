@@ -43,7 +43,7 @@ public class DES {
             this.textEncrypted = DESCipher.doFinal(text);
 
             //Return the text;
-            System.out.println(textEncrypted);
+            //System.out.println(textEncrypted);
             return textEncrypted;
 
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
@@ -55,7 +55,7 @@ public class DES {
 
     //Get the key just in case
     public SecretKey gettingkey() {
-        System.out.println(myDesKey);
+        //System.out.println(myDesKey);
         return myDesKey;
     }
 
