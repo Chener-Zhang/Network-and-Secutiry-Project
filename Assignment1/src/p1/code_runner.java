@@ -7,7 +7,7 @@ import java.util.Arrays;
 class code_runner {
 
     public static void main(String[] args) {
-                StringToByteConventer item = new StringToByteConventer("hello world");
+                StringToByteConventer item = new StringToByteConventer("[B@6acbcfc0");
                 item.get_byte_from_string();
     }
 }
