@@ -1,17 +1,15 @@
 package p1;
 
 import javax.crypto.SecretKey;
+import java.sql.Array;
+import java.util.Arrays;
 
 class code_runner {
 
     public static void main(String[] args) {
-
-
-        DES cipher_test = new DES();
-        byte[] encrypt = cipher_test.Encrypt("hello world\n");
-        SecretKey key = cipher_test.gettingkey();
-        byte[] original = cipher_test.Decrypt(encrypt, key);
-
-
+            String something = "hello world";
+            byte[] get_something_in_bytes = something.getBytes();
+            System.out.println(get_something_in_bytes);
+            System.out.println(Arrays.toString(get_something_in_bytes));
     }
 }
