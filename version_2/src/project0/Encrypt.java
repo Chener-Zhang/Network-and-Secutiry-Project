@@ -17,7 +17,7 @@ public class Encrypt {
    static SecretKey myDesKey;
    static  byte[] textEncrypted;
    
-    public static byte[] Encrypt(String user_input, String sk_string) {
+    public static String Encrypt(String user_input, String sk_string) {
         try {
         	//Convert String to secret key
         	byte[] decodedKey = Base64.getDecoder().decode(sk_string);
@@ -37,8 +37,8 @@ public class Encrypt {
 
             //Return the text;
             //System.out.println(textEncrypted);
-
-            return textEncrypted;
+            String new_return = Arrays.toString(textEncrypted);
+            return new_return;
 
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
             e.printStackTrace();

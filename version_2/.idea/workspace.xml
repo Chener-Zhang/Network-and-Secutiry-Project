@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd9928b5-de3f-41ad-83ac-9e92b38e6939" name="Default Changelist" comment="" />
+    <list default="true" id="fd9928b5-de3f-41ad-83ac-9e92b38e6939" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/project0/conventer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/version_2/project0/Decrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/version_2/project0/Decrypt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/version_2/project0/Encrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/version_2/project0/Encrypt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project0/Decrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/Decrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project0/Encrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/Encrypt.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,16 +18,28 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1XIkEeBogGk2zjhCIqv9iH9aTVY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/project0" />
+  </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chene\Desktop\CIS-3319\version_2\src\project0" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\chene\Desktop\version_2\src\project0" />
     </key>
@@ -134,22 +154,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1263" y="316" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580740909959" />
-    <state width="1860" height="146" key="GridCell.Tab.0.bottom" timestamp="1580741744025">
+    <state width="1877" height="250" key="GridCell.Tab.0.bottom" timestamp="1580765709518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="146" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580741744025" />
-    <state width="1860" height="146" key="GridCell.Tab.0.center" timestamp="1580741744025">
+    <state width="1877" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580765709518" />
+    <state width="1877" height="250" key="GridCell.Tab.0.center" timestamp="1580765709518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="146" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580741744025" />
-    <state width="1860" height="146" key="GridCell.Tab.0.left" timestamp="1580741744025">
+    <state width="1877" height="250" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580765709518" />
+    <state width="1877" height="250" key="GridCell.Tab.0.left" timestamp="1580765709518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="146" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580741744025" />
-    <state width="1860" height="146" key="GridCell.Tab.0.right" timestamp="1580741744025">
+    <state width="1877" height="250" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580765709518" />
+    <state width="1877" height="250" key="GridCell.Tab.0.right" timestamp="1580765709518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="146" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580741744025" />
+    <state width="1877" height="250" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580765709518" />
     <state width="1860" height="322" key="GridCell.Tab.1.bottom" timestamp="1580741315241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -166,5 +186,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="322" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580741315241" />
+    <state x="636" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1580764249810">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580764249810" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580764295346">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580764295346" />
   </component>
 </project>

@@ -2,6 +2,7 @@ package project0;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.Base64;
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -30,6 +31,7 @@ public class Decrypt {
             // Initialize the same cipher for decryption
             DESCipher.init(Cipher.DECRYPT_MODE, originalKey);
 
+
             // Decrypt the text
             byte[] textDecrypted = DESCipher.doFinal(input);
 
@@ -53,11 +55,20 @@ public class Decrypt {
     	String input= in.nextLine();
     	System.out.println("Secret Key?");
     	String sk= in.nextLine();
-    	
-    	byte[] gb= input.getBytes();
-    	
+
+
+
+
+    	String gb= input;
+        //System.out.println(gb);
+        conventer cv = new conventer(gb);
+
+        byte[] in_byte = cv.breaker();
+        //System.out.println(in_byte);
+        //System.out.println(Arrays.toString(in_byte));
+
     	System.out.println("Your Cipher: " + input);
-    	System.out.println("Text Decrypted : " + Decrypt(gb,sk));
+    	System.out.println("Text Decrypted : " + Decrypt(in_byte,sk));
 		
 	}
 }
