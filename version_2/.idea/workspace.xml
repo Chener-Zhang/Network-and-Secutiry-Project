@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd9928b5-de3f-41ad-83ac-9e92b38e6939" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1XIkEeBogGk2zjhCIqv9iH9aTVY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chene\Desktop\version_2\src\project0" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Decrypt">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project0.Client" />
+      <module name="version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project0.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Decrypt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project0.Decrypt" />
+      <module name="version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project0.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Encrypt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project0.Encrypt" />
+      <module name="version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project0.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="project0.Main" />
+      <module name="version_2" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project0.Server" />
+      <module name="version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project0.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Encrypt" />
+      <item itemvalue="Application.Decrypt" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Decrypt" />
+        <item itemvalue="Application.Encrypt" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd9928b5-de3f-41ad-83ac-9e92b38e6939" name="Default Changelist" comment="" />
+      <created>1580740885038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580740885038</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1263" y="316" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580740909959">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1263" y="316" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580740909959" />
+    <state width="1860" height="146" key="GridCell.Tab.0.bottom" timestamp="1580741744025">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="146" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580741744025" />
+    <state width="1860" height="146" key="GridCell.Tab.0.center" timestamp="1580741744025">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="146" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580741744025" />
+    <state width="1860" height="146" key="GridCell.Tab.0.left" timestamp="1580741744025">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="146" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580741744025" />
+    <state width="1860" height="146" key="GridCell.Tab.0.right" timestamp="1580741744025">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="146" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580741744025" />
+    <state width="1860" height="322" key="GridCell.Tab.1.bottom" timestamp="1580741315241">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="322" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580741315241" />
+    <state width="1860" height="322" key="GridCell.Tab.1.center" timestamp="1580741315241">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="322" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580741315241" />
+    <state width="1860" height="322" key="GridCell.Tab.1.left" timestamp="1580741315241">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="322" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580741315241" />
+    <state width="1860" height="322" key="GridCell.Tab.1.right" timestamp="1580741315241">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="322" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580741315241" />
+  </component>
+</project>
