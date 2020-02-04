@@ -94,3 +94,5 @@ doFinal()
 ---
 
 ### **Screen captures is recommended (20).** 
+
+![GitHub Logo](/Assignment1/Picture1.png)
