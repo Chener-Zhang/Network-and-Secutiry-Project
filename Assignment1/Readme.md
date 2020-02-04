@@ -100,3 +100,19 @@ doFinal()
 * But then we realized that it was due to how we were printing the cipher in encrpyt:
 
 ![GitHub Logo](/Assignment1/Picture2.png)
+
+Encrypt was supposed to print as an array of bytes, but instead we got some sort of representation of this array that is essentially meaningless when it comes to using it in decrypt, causing the error. This was due to the facts that we had Encrypt() returning byte[]. So we went into encrypt and changed it so that it returns the array in string form rather than byte[]:
+
+Old:
+
+![GitHub Logo](/Assignment1/Picture3.png)
+
+![GitHub Logo](/Assignment1/Picture4.png)
+
+Also, we had to add an extra class called conventer so that it can convert our array string into a byte[] to be used in decrypt. After that, we set up decrypt so that it directly prints the plaintext, rather than returning the byte[] (which was the cause to our problems in the first place):
+Conventer:
+
+![GitHub Logo](/Assignment1/Picture5.png)
+Decrypt:
+
+![GitHub Logo](/Assignment1/Picture6.png)
