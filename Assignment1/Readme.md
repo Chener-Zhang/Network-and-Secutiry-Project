@@ -93,6 +93,10 @@ doFinal()
 
 ---
 
-### **Screen captures is recommended (20).** 
+### **Screen captures** 
+* Some difficulties we had were that when we were trying to use decrypt, we noticed that we kept getting this error: 
 
 ![GitHub Logo](/Assignment1/Picture1.png)
+* But then we realized that it was due to how we were printing the cipher in encrpyt:
+
+![GitHub Logo](/Assignment1/Picture2.png)
