@@ -28,6 +28,7 @@ import java.util.Scanner;
 import javax.crypto.*;
 import java.util.Arrays;
 ```
+---
 ### **Code and Comment**
 ```
     Import the sample code for connection:
@@ -42,9 +43,9 @@ import java.util.Arrays;
     Class key_generator;
     Class Main;
 ```
+---
 
 ## Code and Comment Description: 
-
 ```
 public static String Encrypt(String user_input, String sk_string)
                 
