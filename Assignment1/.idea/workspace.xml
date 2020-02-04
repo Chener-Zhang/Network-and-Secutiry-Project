@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd9928b5-de3f-41ad-83ac-9e92b38e6939" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project0/conventer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/version_2/project0/Decrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/version_2/project0/Decrypt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/version_2/project0/Encrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/version_2/project0/Encrypt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project0/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project0/Decrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/Decrypt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project0/Encrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/Encrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project0/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project0/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project0/conventer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/conventer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project0/key_generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/key_generator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,7 @@
       <recent name="C:\Users\chene\Desktop\version_2\src\project0" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Decrypt">
+  <component name="RunManager" selected="Application.Encrypt (1)">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project0.Client" />
       <module name="version_2" />
@@ -67,6 +69,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Encrypt (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Encrypt" />
+      <module name="version_2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,33 +103,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="project0.Server" />
-      <module name="version_2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="project0.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Encrypt" />
       <item itemvalue="Application.Decrypt" />
+      <item itemvalue="Application.Encrypt (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Encrypt (1)" />
         <item itemvalue="Application.Decrypt" />
         <item itemvalue="Application.Encrypt" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -186,10 +182,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="322" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580741315241" />
-    <state x="636" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1580764249810">
+    <state x="636" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1580852330105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580764249810" />
+    <state x="636" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580852330105" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580764295346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
