@@ -8,6 +8,7 @@
 
 
 ### **language and library you used**
+#### We are using JAVA
 ```
 import java.io.*;
 import java.net.Socket;
@@ -46,6 +47,10 @@ import java.util.Arrays;
 
 ```
 public static String Encrypt(String user_input, String sk_string)
+                
+                DESCipher.init(Cipher.ENCRYPT_MODE, originalKey);
+               
+                Return String;
 ```
 Takes user_input from the user, and enter the secretKey; Before run the Encrypt, you have to run the main first in order to get a key;
 
@@ -57,7 +62,34 @@ We also have to encoded into 64base
 
 `this.encodedKey = Base64.getEncoder().encodeToString(this.desKey.getEncoded());`
 
+---
+
+```
+public static void Decrypt(byte[] input, String sk_string)
+
+        DESCipher.init(Cipher.DECRYPT_MODE, originalKey);
+
+        Print out the words which decrypted;
+```
+Decode the key
+
+`byte[] decodedKey = Base64.getDecoder().decode(sk_string);`
+
+Getting the instance
+
+`DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");`
+
+doFinal()
+
+`DESCipher.doFinal(input)`
+
+---
 
 ### **problems you encountered and how you solved them**
+
+
+
+
+---
+
 ### **Screen captures is recommended (20).** 
-### **language and library you used**
