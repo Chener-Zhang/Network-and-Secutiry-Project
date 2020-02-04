@@ -27,7 +27,37 @@ import java.util.Scanner;
 import javax.crypto.*;
 import java.util.Arrays;
 ```
-### **code and comment**
+### **Code and Comment**
+```
+    Import the sample code for connection:
+
+    Class Client;
+    Class Server;
+
+
+    Write by us: 
+    Class Encrypt;
+    Class Decrypt;
+    Class key_generator;
+    Class Main;
+```
+
+## Code and Comment Description: 
+
+```
+public static String Encrypt(String user_input, String sk_string)
+```
+Takes user_input from the user, and enter the secretKey; Before run the Encrypt, you have to run the main first in order to get a key;
+
+Main takes the class of secret_key generator; Which generate the key using
+
+` KeyGenerator.getInstance("DES");`
+
+We also have to encoded into 64base 
+
+`this.encodedKey = Base64.getEncoder().encodeToString(this.desKey.getEncoded());`
+
+
 ### **problems you encountered and how you solved them**
 ### **Screen captures is recommended (20).** 
 ### **language and library you used**
