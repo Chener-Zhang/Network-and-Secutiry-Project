@@ -1,10 +1,8 @@
-package project0;
 
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.io.*;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Scanner;
@@ -16,6 +14,7 @@ public class Encrypt {
    static KeyGenerator KEY_generator;
    static SecretKey myDesKey;
    static  byte[] textEncrypted;
+   
    
     public static String Encrypt(String user_input, String sk_string) {
         try {
@@ -36,7 +35,6 @@ public class Encrypt {
             textEncrypted = DESCipher.doFinal(text);
 
             //Return the text;
-            //System.out.println(textEncrypted);
             String new_return = Arrays.toString(textEncrypted);
             return new_return;
 
@@ -57,6 +55,7 @@ public class Encrypt {
     	System.out.println("Your Plaintext: " + pt);
     	System.out.println("Text Encrypted : " + Encrypt(pt,sk));
 
+    	in.close();
     }
     
 }

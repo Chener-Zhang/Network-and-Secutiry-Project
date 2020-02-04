@@ -1,7 +1,4 @@
-package project0;
 
-
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class conventer {
@@ -16,11 +13,8 @@ public class conventer {
     }
 
     public byte[] breaker(){
-
-
         StringTokenizer symbal_breaker = new StringTokenizer(string, "[]");
         String dele_begin_end =  symbal_breaker.nextToken();
-        //System.out.println(dele_begin_end);
         StringTokenizer multiTokenizer = new StringTokenizer(dele_begin_end, ", ");
 
         int counter = 0;
@@ -33,14 +27,10 @@ public class conventer {
 
             counter++;
         }
-        //System.out.println(counter);
-
-
         //----------------------------------------->
         Final = new byte[counter];
         StringTokenizer symbal_breaker2 = new StringTokenizer(string, "[]");
         String dele_begin_end2 =  symbal_breaker2.nextToken();
-        //System.out.println(dele_begin_end2);
         StringTokenizer multiTokenizer2 = new StringTokenizer(dele_begin_end2, ", ");
 
         int counter2 = 0;
@@ -53,12 +43,6 @@ public class conventer {
             Final[counter2] = b1;
             counter2++;
         }
-        //System.out.println(Final);
-        //System.out.println(Arrays.toString(Final));
-
-
-
-
 
         return Final;
     }
