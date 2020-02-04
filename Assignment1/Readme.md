@@ -103,6 +103,29 @@ doFinal()
 
 Encrypt was supposed to print as an array of bytes, but instead we got some sort of representation of this array that is essentially meaningless when it comes to using it in decrypt, causing the error. This was due to the facts that we had Encrypt() returning byte[]. So we went into encrypt and changed it so that it returns the array in string form rather than byte[]:
 
+
+
+```
+We want to make String arr = "a[j@c3bv&"  ----- > byte[] arr = "a[j@c3bv&";
+
+1: Using Encrypt() to return String in "[1],[2],[3],[4],[5],[6],[7],[8],[9]"
+2: delim("[ ] ,")
+3: get the raw 1 2 3 4 5 6 7 8 9
+4: using loop to assign these number into byte[]; 
+such as --- > 
+arr[0] = 1
+arr[1] = 2
+arr[2] = 3
+arr[3] = 4
+arr[4] = 5
+.
+.
+.
+
+5: return byte[] arr; // which become the parameter in decryption;
+
+```
+
 Old:
 
 ![GitHub Logo](/Assignment1/Picture3.png)
@@ -116,5 +139,6 @@ Conventer:
 Decrypt:
 
 ![GitHub Logo](/Assignment1/Picture6.png)
+
 
 Overall, our code was able to work once wwe fixed some of these bugs.
