@@ -130,6 +130,8 @@ Old:
 
 ![GitHub Logo](/Assignment1/Picture3.png)
 
+New:
+
 ![GitHub Logo](/Assignment1/Picture4.png)
 
 Also, we had to add an extra class called conventer so that it can convert our array string into a byte[] to be used in decrypt. After that, we set up decrypt so that it directly prints the plaintext, rather than returning the byte[] (which was the cause to our problems in the first place):
@@ -141,4 +143,4 @@ Decrypt:
 ![GitHub Logo](/Assignment1/Picture6.png)
 
 
-Overall, our code was able to work once wwe fixed some of these bugs.
+Overall, our code was able to work once we fixed some of these bugs.
