@@ -2,13 +2,13 @@ package project;
 
 import java.util.StringTokenizer;
 
-public class conventer {
+public class conventer_from_p1 {
 
 
     String string;
     byte[] Final;
 
-    public conventer(String st) {
+    public conventer_from_p1(String st) {
         this.string = st;
 
     }

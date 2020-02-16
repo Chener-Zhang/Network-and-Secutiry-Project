@@ -8,14 +8,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 
-public class key_generator {
+public class DES_key_generator_from_p1 {
 
     KeyGenerator keyGen;
     SecretKey desKey;
     String encodedKey;
 
-
-    public key_generator() {
+    public DES_key_generator_from_p1() {
         try {
             //init the var
             KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
@@ -26,6 +25,12 @@ public class key_generator {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        DES_key_generator_from_p1 k = new DES_key_generator_from_p1();
+        System.out.println(k.keyToString());
+        System.out.println(k.writeKeyFile());
     }
 
     public String keyToString() {

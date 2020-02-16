@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Scanner;
 
-public class Decrypt {
+public class DES_Decrypt_from_p1 {
 
     static Cipher DESCipher;
     static KeyGenerator KEY_generator;
@@ -26,7 +26,7 @@ public class Decrypt {
             DESCipher.init(Cipher.DECRYPT_MODE, originalKey);
 
 
-            // Decrypt the text
+            // DES_Decrypt_from_p1 the text
             byte[] textDecrypted = DESCipher.doFinal(input);
 
             //Prints the text that has been decrypted
@@ -46,7 +46,7 @@ public class Decrypt {
         String sk = in.nextLine();
 
         String gb = input;
-        conventer cv = new conventer(gb);
+        conventer_from_p1 cv = new conventer_from_p1(gb);
 
         byte[] in_byte = cv.breaker();
 

@@ -9,7 +9,7 @@ import java.util.Base64;
 import java.util.Scanner;
 
 
-public class Encrypt {
+public class DES_Encrypt_from_P1 {
 
     static Cipher DESCipher;
     static KeyGenerator KEY_generator;
@@ -32,7 +32,7 @@ public class Encrypt {
             //Turn the String of user_input to the byte mode
             byte[] text = user_input.getBytes();
 
-            // Encrypt the text -> Do final
+            // DES_Encrypt_from_P1 the text -> Do final
             textEncrypted = DESCipher.doFinal(text);
 
             //Return the text;
