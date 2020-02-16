@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd9928b5-de3f-41ad-83ac-9e92b38e6939" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_file_generated.txt" beforeDir="false" afterPath="$PROJECT_DIR$/key_file_generated.txt" afterDir="false" />
-    </list>
+    <list default="true" id="fd9928b5-de3f-41ad-83ac-9e92b38e6939" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,11 +94,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Client" />
-      <item itemvalue="Application.Encrypt" />
       <item itemvalue="Application.Decrypt" />
       <item itemvalue="Application.Encrypt (1)" />
+      <item itemvalue="Application.Encrypt" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
@@ -175,10 +172,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="322" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580741315241" />
-    <state x="636" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1580854654746">
+    <state x="636" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1580940310714">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580854654746" />
+    <state x="636" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580940310714" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580764295346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
