@@ -5,6 +5,8 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 import java.util.Scanner;
 
+
+// In one machine simulator
 public class Code_Runner {
 
 
