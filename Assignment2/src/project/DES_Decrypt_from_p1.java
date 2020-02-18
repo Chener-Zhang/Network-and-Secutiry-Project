@@ -5,7 +5,6 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-import java.util.Scanner;
 
 public class DES_Decrypt_from_p1 {
 
@@ -14,7 +13,7 @@ public class DES_Decrypt_from_p1 {
     static SecretKey myDesKey;
     static byte[] textEncrypted;
 
-    public static void Decrypt(byte[] input, String sk_string) {
+    public void Decrypt(byte[] input, String sk_string) {
         try {
             //Convert String to secret key
             byte[] decodedKey = Base64.getDecoder().decode(sk_string);
@@ -37,6 +36,7 @@ public class DES_Decrypt_from_p1 {
         }
     }
 
+    /*
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
@@ -51,7 +51,9 @@ public class DES_Decrypt_from_p1 {
         byte[] in_byte = cv.breaker();
 
         System.out.println("Your Cipher: " + input);
-        Decrypt(in_byte, sk);
+
 
     }
+     */
+
 }
