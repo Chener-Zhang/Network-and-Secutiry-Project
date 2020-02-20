@@ -1,4 +1,4 @@
-package project0;
+package project;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
