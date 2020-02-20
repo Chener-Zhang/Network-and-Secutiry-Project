@@ -24,7 +24,7 @@ public class Code_Runner {
         //HMAC conventer
         byte[] item = mac.Calculate_HMAC(message, key);
         System.out.println("HMAC String:" + mac.StringToHex(item));
-        String itemToString = mac.StringToHex(item);
+        String HMAC_Original = mac.StringToHex(item);
 
         //DES key generator
         DES_key_generator_from_p1 generator = new DES_key_generator_from_p1();
@@ -33,13 +33,16 @@ public class Code_Runner {
 
         //DES encryption:
         DES_Encrypt_from_P1 DES_en = new DES_Encrypt_from_P1();
-        String Encryption_message = DES_en.Encrypt(itemToString, DES_key);
+        String Encryption_message = DES_en.Encrypt(HMAC_Original, DES_key);
         System.out.println("Encryption_message: " + Encryption_message);
 
         //DES decryption:
         DES_Decrypt_from_p1 DES_de = new DES_Decrypt_from_p1();
         conventer_from_p1 conventer = new conventer_from_p1(Encryption_message);
-        DES_de.Decrypt(conventer.breaker(), DES_key);
+        String Decrypt_message = DES_de.Decrypt(conventer.breaker(), DES_key);
+        System.out.println(Decrypt_message);
+
+        System.out.println(HMAC_Original.equals(Decrypt_message));
 
 
     }

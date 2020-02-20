@@ -13,7 +13,8 @@ public class DES_Decrypt_from_p1 {
     static SecretKey myDesKey;
     static byte[] textEncrypted;
 
-    public void Decrypt(byte[] input, String sk_string) {
+    public String Decrypt(byte[] input, String sk_string) {
+        byte[] textDecrypted;
         try {
             //Convert String to secret key
             byte[] decodedKey = Base64.getDecoder().decode(sk_string);
@@ -26,14 +27,16 @@ public class DES_Decrypt_from_p1 {
 
 
             // DES_Decrypt_from_p1 the text
-            byte[] textDecrypted = DESCipher.doFinal(input);
+            textDecrypted = DESCipher.doFinal(input);
 
             //Prints the text that has been decrypted
-            System.out.println("Text Decryted : " + new String(textDecrypted));
-
+            String output = new String(textDecrypted);
+            //System.out.println("Text Decryted : " + output);
+            return output;
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     /*
