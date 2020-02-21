@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
 
@@ -36,8 +37,34 @@ public class Client {
 		// is not typed at client
 		while (!(str = kb.readLine()).equals("exit")) {
 
+
+			HMAC mac = new HMAC();
+			Scanner scanner = new Scanner(System.in);
+
+			//print out the system message
+			System.out.println("Enter they message:");
+			String message = scanner.nextLine();
+			System.out.println("Enter the key:");
+			String key = scanner.nextLine();
+
+			//HMAC conventer
+			byte[] item = mac.Calculate_HMAC(message, key);
+			System.out.println("HMAC String:" + mac.StringToHex(item));
+			String HMAC_Original = mac.StringToHex(item);
+
+			//DES key generator
+			DES_key_generator_from_p1 generator = new DES_key_generator_from_p1();
+			String DES_key = generator.keyToString();
+			System.out.println("DES key: " + DES_key);
+
+			//DES encryption:
+			DES_Encrypt_from_P1 DES_en = new DES_Encrypt_from_P1();
+			String Encryption_message = DES_en.Encrypt(HMAC_Original, DES_key);
+			System.out.println("Encryption_message: " + Encryption_message);
+
+
 			// send to the server
-			dos.writeBytes(str + "\n");
+			dos.writeBytes(Encryption_message + "\n");
 
 			// receive from the server
 			str1 = br.readLine();
