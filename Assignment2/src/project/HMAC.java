@@ -9,7 +9,6 @@ import java.util.Formatter;
 
 public class HMAC {
 
-
     public byte[] Calculate_HMAC(String message, String key)
             throws SignatureException, NoSuchAlgorithmException, InvalidKeyException {
         SecretKeySpec mykey = new SecretKeySpec(key.getBytes(), "HmacSHA1");
