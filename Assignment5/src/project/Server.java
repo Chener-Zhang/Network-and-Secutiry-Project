@@ -1,5 +1,6 @@
 package project;
 
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -18,6 +19,10 @@ public class Server {
         System.out.println("waiting for the client");
         socket = serverSocket.accept();
         System.out.println("Client Accept");
+
+        //get the system input stream
+        DataInputStream input_from_system = new DataInputStream(socket.getInputStream());
+        System.out.println(input_from_system.readUTF());
         socket.close();
     }
 
