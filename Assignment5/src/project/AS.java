@@ -26,7 +26,7 @@ class AS implements Server {
     }
 
     public static void main(String[] args) throws IOException {
-        AS as = new AS(); 
+        AS as = new AS();
         as.connection_Server();
     }
 
@@ -38,32 +38,45 @@ class AS implements Server {
         System.out.println("Client Accept");
 
 
+
         //get the system input stream
         DataOutputStream send_to_client = new DataOutputStream(socket.getOutputStream());
         DataInputStream input_from_system = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 
         send_to_client.writeUTF(get_id_c);
 
+        //get the client id
         String Client_input = input_from_system.readUTF();
         while (!Client_input.equals(client_id_data)) {
             send_to_client.writeUTF("please try again client id");
             Client_input = input_from_system.readUTF();
-            System.out.println(Client_input);
         }
+        this.ID_C = Client_input;
 
+        //get the tgs id
         send_to_client.writeUTF("log in success\n" + get_id_tgs );
         Client_input = input_from_system.readUTF();
         while (!Client_input.equals(tgs_id_data)) {
             send_to_client.writeUTF("please try again the tgs id");
             Client_input = input_from_system.readUTF();
-            System.out.println(Client_input);
+        }
+        this.ID_TGS = Client_input;
+
+
+        System.out.println(ID_C + ID_TGS);
+        
+        try{
+            while (socket.isConnected()){
+                send_to_client.writeUTF("you can type [quit] now ");
+            }
+            send_to_client.writeUTF("thank you for using socket");
+
+            //close the socket
+        }catch (Exception e){
+
         }
 
 
-
-        System.out.println("Connection End\nbye bye");
-        socket.close();
-        //close the socket
     }
 
 
