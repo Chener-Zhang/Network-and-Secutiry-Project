@@ -40,9 +40,9 @@ public class Client {
             System.out.println("connection success\n");
 
             while (!input.equals("quit")) {
+                System.out.println(message_from_server.readUTF());
                 input = my_input.nextLine();
                 my_output.writeUTF(input);
-                System.out.println(message_from_server.readUTF());
             }
 
             //disconnected
