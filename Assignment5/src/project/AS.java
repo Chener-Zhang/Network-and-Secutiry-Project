@@ -18,6 +18,12 @@ class AS implements Server {
     String get_id_c = "Enter the Client ID";
     String get_id_tgs = "Enter the TGS ID";
 
+    String client_id_data = "CIS3319USERID";
+    String tgs_id_data = "CIS3319TGSID";
+
+    DataInputStream input_from_system;
+    DataOutputStream send_to_client;
+
     public AS() {
     }
 
@@ -35,19 +41,32 @@ class AS implements Server {
 
 
         //get the system input stream
-        DataInputStream input_from_system = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
         DataOutputStream send_to_client = new DataOutputStream(socket.getOutputStream());
 
 
+        send_to_client.writeUTF("please enter you ID");
+        DataInputStream input_from_system = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 
-        while (!Client_input.equals("quit")) {
-            send_to_client.writeUTF(get_id_c);
-            send_to_client.writeUTF(get_id_c);
-            Client_input = input_from_system.readUTF();
-            send_to_client.writeUTF(get_id_tgs);
+        while (!Client_input.equals(client_id_data)) {
+            send_to_client.writeUTF("please try again");
+
+            System.out.println(Client_input);
         }
-        //close the socket
+        send_to_client.writeUTF("you have enter " + input_from_system.readUTF());
+
+        /*
+        send_to_client.writeUTF(tgs_id_data);
+        while(!Client_input.equals(tgs_id_data)){
+            Client_input = input_from_system.readUTF();
+            send_to_client.writeUTF("please try again for TGS ID");
+            System.out.println(Client_input);
+        }
+
+*/
         System.out.println("Connection End\nbye bye");
         socket.close();
+        //close the socket
     }
+
+
 }

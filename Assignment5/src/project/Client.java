@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Client {
 
-    private static String input;
+    String input = "";
     int port;
     String id;
     String address;
@@ -35,18 +35,16 @@ public class Client {
         DataOutputStream my_output = new DataOutputStream(socket.getOutputStream());
         DataInputStream message_from_server = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 
-
         //check if connection success
         if (socket.isConnected()) {
-            System.out.println("connection success");
+            System.out.println("connection success\n");
 
             while (!input.equals("quit")) {
-                //take user input
                 input = my_input.nextLine();
                 my_output.writeUTF(input);
-                //print out what the server send
                 System.out.println(message_from_server.readUTF());
             }
+
             //disconnected
             System.out.println("Connection End!\nBye Bye");
 
