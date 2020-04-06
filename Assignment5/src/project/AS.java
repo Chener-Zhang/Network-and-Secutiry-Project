@@ -42,27 +42,20 @@ class AS implements Server {
 
         //get the system input stream
         DataOutputStream send_to_client = new DataOutputStream(socket.getOutputStream());
+        DataInputStream input_from_system = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 
 
         send_to_client.writeUTF("please enter you ID");
-        DataInputStream input_from_system = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 
         while (!Client_input.equals(client_id_data)) {
             send_to_client.writeUTF("please try again");
-
+            Client_input = input_from_system.readUTF();
             System.out.println(Client_input);
         }
+
         send_to_client.writeUTF("you have enter " + input_from_system.readUTF());
 
-        /*
-        send_to_client.writeUTF(tgs_id_data);
-        while(!Client_input.equals(tgs_id_data)){
-            Client_input = input_from_system.readUTF();
-            send_to_client.writeUTF("please try again for TGS ID");
-            System.out.println(Client_input);
-        }
 
-*/
         System.out.println("Connection End\nbye bye");
         socket.close();
         //close the socket
