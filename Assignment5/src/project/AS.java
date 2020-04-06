@@ -2,9 +2,11 @@ package project;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 class AS implements Server {
     private Socket socket;
@@ -12,12 +14,16 @@ class AS implements Server {
     private String ID_TGS;
     private int TS_1;
 
+    String Client_input = "";
+    String get_id_c = "Enter the Client ID";
+    String get_id_tgs = "Enter the TGS ID";
+
     public AS() {
     }
 
     public static void main(String[] args) throws IOException {
-            AS as = new AS();
-            as.connection_Server();
+        AS as = new AS();
+        as.connection_Server();
     }
 
     @Override
@@ -27,12 +33,20 @@ class AS implements Server {
         socket = serverSocket.accept();
         System.out.println("Client Accept");
 
+
         //get the system input stream
         DataInputStream input_from_system = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
-        String Client_input = "";
+        System.out.println(1);
+        DataOutputStream send_to_client = new DataOutputStream(socket.getOutputStream());
+        System.out.println(2);
+
+
+
         while (!Client_input.equals("quit")) {
+            send_to_client.writeUTF(get_id_c);
+            send_to_client.writeUTF(get_id_c);
             Client_input = input_from_system.readUTF();
-            System.out.println(Client_input);
+            send_to_client.writeUTF(get_id_tgs);
         }
         //close the socket
         System.out.println("Connection End\nbye bye");
