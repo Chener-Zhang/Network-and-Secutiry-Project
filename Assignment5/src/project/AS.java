@@ -26,7 +26,7 @@ class AS implements Server {
     }
 
     public static void main(String[] args) throws IOException {
-        AS as = new AS();
+        AS as = new AS(); 
         as.connection_Server();
     }
 
