@@ -36,9 +36,7 @@ class AS implements Server {
 
         //get the system input stream
         DataInputStream input_from_system = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
-        System.out.println(1);
         DataOutputStream send_to_client = new DataOutputStream(socket.getOutputStream());
-        System.out.println(2);
 
 
 
