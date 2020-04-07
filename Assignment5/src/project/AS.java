@@ -14,15 +14,12 @@ class AS implements Server {
     long TS_1;
 
 
-
-
     String get_id_c = "Enter the Client ID";
     String get_id_tgs = "Enter the TGS ID";
 
     String client_id = "CIS3319USERID";
     String tgs_id = "CIS3319TGSID";
     String tgs_key;
-
 
 
     public AS() {
@@ -64,29 +61,40 @@ class AS implements Server {
         }
         ID_TGS = Client_input;
 
+
         TS_1 = System.currentTimeMillis() / 1000L;
+        System.out.println("CLIENT ID : " + client_id + "\nTGS ID :" + tgs_id + "\nTS1 : " + TS_1);
 
-        System.out.println("CLIENT ID : " + client_id + "\nTGS ID :"+ tgs_id +  "\nTS1 : " + TS_1);
+        String ticket_before_encryption = "";
+        key_generator Ktgs = new key_generator();
+        tgs_key = Ktgs.keyToString();
+        System.out.println("\nsave the key \n" + tgs_key);
 
+        ticket_before_encryption += tgs_key;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += ID_C;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += ID_TGS;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += TS_1;
+        ticket_before_encryption += "\n";
 
-        String ticket_before_encryption;
-        key_generator Ktgs= new key_generator();
-        System.out.println(Ktgs.keyToString());
-        // you need to send
-
-
+        Encrypt encrypt = new Encrypt();
+        send_to_client.writeUTF("here is you ticket\n\n" + encrypt.Encrypt(ticket_before_encryption, tgs_key));
+        send_to_client.writeUTF("thank you for using socket");
 
 
         try {
             while (socket.isConnected()) {
                 send_to_client.writeUTF("you can type [quit] now ");
             }
-            send_to_client.writeUTF("thank you for using socket");
+
 
             //close the socket
         } catch (Exception e) {
 
         }
+
 
 
     }

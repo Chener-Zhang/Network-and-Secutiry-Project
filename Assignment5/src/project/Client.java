@@ -45,6 +45,9 @@ public class Client {
                 my_output.writeUTF(input);
             }
 
+
+
+
             //disconnected
             System.out.println("Connection End!\nBye Bye");
 
