@@ -22,8 +22,8 @@ public class Client {
     public static void main(String[] args) throws IOException {
         Client client = new Client();
         client.connection_start(5000);
+        
     }
-
 
     public void connection_start(int port) throws IOException {
         //create a socket
@@ -38,15 +38,11 @@ public class Client {
         //check if connection success
         if (socket.isConnected()) {
             System.out.println("connection success\n");
-
             while (!input.equals("quit")) {
                 System.out.println(message_from_server.readUTF());
                 input = my_input.nextLine();
                 my_output.writeUTF(input);
             }
-
-
-
 
             //disconnected
             System.out.println("Connection End!\nBye Bye");
