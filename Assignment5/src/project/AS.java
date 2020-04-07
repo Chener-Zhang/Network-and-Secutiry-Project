@@ -6,22 +6,23 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
 class AS implements Server {
-    private Socket socket;
-    private String ID_C;
-    private String ID_TGS;
-    private long TS_1;
+    Socket socket;
+    String ID_C;
+    String ID_TGS;
+    long TS_1;
+
+
 
 
     String get_id_c = "Enter the Client ID";
     String get_id_tgs = "Enter the TGS ID";
 
-    String client_id_data = "CIS3319USERID";
-    String tgs_id_data = "CIS3319TGSID";
+    String client_id = "CIS3319USERID";
+    String tgs_id = "CIS3319TGSID";
+    String tgs_key;
 
-    String key_tgs = "tgs";
 
 
     public AS() {
@@ -48,24 +49,34 @@ class AS implements Server {
 
         //get the client id
         String Client_input = input_from_system.readUTF();
-        while (!Client_input.equals(client_id_data)) {
+        while (!Client_input.equals(client_id)) {
             send_to_client.writeUTF("please try again client id");
             Client_input = input_from_system.readUTF();
         }
-        this.ID_C = Client_input;
+        ID_C = Client_input;
 
         //get the tgs id
         send_to_client.writeUTF("log in success\n" + get_id_tgs);
         Client_input = input_from_system.readUTF();
-        while (!Client_input.equals(tgs_id_data)) {
+        while (!Client_input.equals(tgs_id)) {
             send_to_client.writeUTF("please try again the tgs id");
             Client_input = input_from_system.readUTF();
         }
-        this.ID_TGS = Client_input;
+        ID_TGS = Client_input;
 
         TS_1 = System.currentTimeMillis() / 1000L;
 
-        System.out.println("CLIENT ID : " + client_id_data + "\nTGS ID :"+ tgs_id_data+  "\nTS1 : " + TS_1);
+        System.out.println("CLIENT ID : " + client_id + "\nTGS ID :"+ tgs_id +  "\nTS1 : " + TS_1);
+
+
+        String ticket_before_encryption;
+        key_generator Ktgs= new key_generator();
+        System.out.println(Ktgs.keyToString());
+        // you need to send
+
+
+
+
         try {
             while (socket.isConnected()) {
                 send_to_client.writeUTF("you can type [quit] now ");
