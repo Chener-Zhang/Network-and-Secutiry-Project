@@ -7,16 +7,19 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class File_Server implements Server{
-    String id;
-    long timelife = 86400;
-    public File_Server(){
+class TGS implements Server {
 
+    String File_Server_ID = "CIS3319SERVERID";
+    String TGS_ID = "CIS3319TGSID";
+    String Client_ID = "CIS3319USERID";
+    long timelife = 60;
+
+    public TGS() {
     }
-
 
     @Override
     public void connection_Server() throws IOException {
+
         String key = null;
         String cipher_text = null;
         ServerSocket serverSocket = new ServerSocket(5000);
@@ -30,7 +33,7 @@ public class File_Server implements Server{
         DataInputStream input_from_client = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 
 
-        send_to_client.writeUTF("welcome to server\nPlease enter the Cipher text");
+        send_to_client.writeUTF("welcome to TGS server\nPlease enter the Cipher text");
         String Client_input = input_from_client.readUTF();
 
         while (Client_input != null) {
@@ -52,6 +55,31 @@ public class File_Server implements Server{
         Decrypt decrypt = new Decrypt();
         decrypt.Decrypt(in_byte, key);
 
+
+
+        Long TS_2 = System.currentTimeMillis() / 1000L;
+
+        String ticket_before_encryption = "";
+        key_generator Ktgs = new key_generator();
+        String server_key = Ktgs.keyToString();
+
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += server_key;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "Client ID " + Client_ID;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "TGS id " + TGS_ID;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "Time session " + TS_2;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "Server ID " + File_Server_ID;
+        ticket_before_encryption += "\n";
+
+
+        Encrypt encrypt = new Encrypt();
+        send_to_client.writeUTF("here is you new ticket to access Server\n\n" + encrypt.Encrypt(ticket_before_encryption, server_key) + "\nSave the decryption key:\n" + server_key);
+
+
         try {
             while (socket.isConnected()) {
                 send_to_client.writeUTF("you can type [quit] now ");
@@ -63,10 +91,11 @@ public class File_Server implements Server{
         } finally {
             socket.close();
         }
+
     }
 
     public static void main(String[] args) throws IOException {
-        File_Server file_server = new File_Server();
-        file_server.connection_Server();
+        TGS tgs = new TGS();
+        tgs.connection_Server();
     }
 }

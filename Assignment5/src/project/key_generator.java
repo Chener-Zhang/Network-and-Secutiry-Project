@@ -1,9 +1,11 @@
-package project0;
+package project;
 
-import javax.crypto.*;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-import java.io.*;
 
 
 public class key_generator {
@@ -39,20 +41,16 @@ public class key_generator {
     	try {
     		
     	    String str = this.encodedKey;
-    	    BufferedWriter writer = new BufferedWriter(new FileWriter("key_file_generated.txt"));
-    	    writer.write(str);
-    	     
-    	    writer.close();
-    	    return "File Written";
+    	    return str;
     	} catch (Exception e) {
     		return "Error in writing file";
     	}
     }
+    /*
     public static void main(String[] args) {
         key_generator k= new key_generator();
         System.out.println(k.keyToString());
-        System.out.println(k.writeKeyFile());
     }
-    
+    */
        
 }
