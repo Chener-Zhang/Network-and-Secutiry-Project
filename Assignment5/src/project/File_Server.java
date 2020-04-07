@@ -9,7 +9,7 @@ import java.net.Socket;
 
 public class File_Server implements Server{
     String id;
-
+    long timelife = 86400;
     public File_Server(){
 
     }

@@ -12,7 +12,7 @@ class TGS implements Server {
     String File_Server_ID = "CIS3319SERVERID";
     String TGS_ID = "CIS3319TGSID";
     String Client_ID = "CIS3319USERID";
-
+    long timelife = 60;
 
     public TGS() {
     }
@@ -72,6 +72,9 @@ class TGS implements Server {
         ticket_before_encryption += "\n";
         ticket_before_encryption += "Time session " + TS_2;
         ticket_before_encryption += "\n";
+        ticket_before_encryption += "Server ID " + File_Server_ID;
+        ticket_before_encryption += "\n";
+
 
         Encrypt encrypt = new Encrypt();
         send_to_client.writeUTF("here is you new ticket to access Server\n\n" + encrypt.Encrypt(ticket_before_encryption, server_key) + "\nSave the decryption key:\n" + server_key);
