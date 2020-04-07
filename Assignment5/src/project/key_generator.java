@@ -1,9 +1,11 @@
-package project0;
+package project;
 
-import javax.crypto.*;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-import java.io.*;
 
 
 public class key_generator {
