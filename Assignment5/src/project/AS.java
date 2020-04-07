@@ -12,7 +12,7 @@ class AS implements Server {
     private Socket socket;
     private String ID_C;
     private String ID_TGS;
-    private int TS_1;
+    private long TS_1;
 
 
     String get_id_c = "Enter the Client ID";
@@ -20,6 +20,8 @@ class AS implements Server {
 
     String client_id_data = "CIS3319USERID";
     String tgs_id_data = "CIS3319TGSID";
+
+    String key_tgs = "tgs";
 
 
     public AS() {
@@ -38,7 +40,6 @@ class AS implements Server {
         System.out.println("Client Accept");
 
 
-
         //get the system input stream
         DataOutputStream send_to_client = new DataOutputStream(socket.getOutputStream());
         DataInputStream input_from_system = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
@@ -54,7 +55,7 @@ class AS implements Server {
         this.ID_C = Client_input;
 
         //get the tgs id
-        send_to_client.writeUTF("log in success\n" + get_id_tgs );
+        send_to_client.writeUTF("log in success\n" + get_id_tgs);
         Client_input = input_from_system.readUTF();
         while (!Client_input.equals(tgs_id_data)) {
             send_to_client.writeUTF("please try again the tgs id");
@@ -62,17 +63,17 @@ class AS implements Server {
         }
         this.ID_TGS = Client_input;
 
+        TS_1 = System.currentTimeMillis() / 1000L;
 
-        System.out.println(ID_C + ID_TGS);
-        
-        try{
-            while (socket.isConnected()){
+        System.out.println("CLIENT ID : " + client_id_data + "\nTGS ID :"+ tgs_id_data+  "\nTS1 : " + TS_1);
+        try {
+            while (socket.isConnected()) {
                 send_to_client.writeUTF("you can type [quit] now ");
             }
             send_to_client.writeUTF("thank you for using socket");
 
             //close the socket
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 
