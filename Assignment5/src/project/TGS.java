@@ -50,14 +50,25 @@ class TGS implements Server {
         System.out.println(key);
 
 
-
         conventer cv = new conventer(cipher_text);
         byte[] in_byte = cv.breaker();
         Decrypt decrypt = new Decrypt();
         decrypt.Decrypt(in_byte, key);
 
 
-        socket.close();
+        try {
+            while (socket.isConnected()) {
+                send_to_client.writeUTF("you can type [quit] now ");
+            }
+
+
+            //close the socket
+        } catch (Exception e) {
+
+        } finally {
+            socket.close();
+        }
+
     }
 
     public static void main(String[] args) throws IOException {
