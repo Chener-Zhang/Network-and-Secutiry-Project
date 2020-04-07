@@ -72,15 +72,16 @@ class AS implements Server {
 
         ticket_before_encryption += tgs_key;
         ticket_before_encryption += "\n";
-        ticket_before_encryption += ID_C;
+        ticket_before_encryption += "Client ID " +ID_C;
         ticket_before_encryption += "\n";
-        ticket_before_encryption += ID_TGS;
+        ticket_before_encryption += "TGS id " + ID_TGS;
         ticket_before_encryption += "\n";
-        ticket_before_encryption += TS_1;
+        ticket_before_encryption += "Time session " +TS_1;
         ticket_before_encryption += "\n";
 
+
         Encrypt encrypt = new Encrypt();
-        send_to_client.writeUTF("here is you ticket\n\n" + encrypt.Encrypt(ticket_before_encryption, tgs_key));
+        send_to_client.writeUTF("here is you ticket\n\n" + encrypt.Encrypt(ticket_before_encryption, tgs_key)+"\nSave the decryption key:\n" + tgs_key);
         send_to_client.writeUTF("thank you for using socket");
 
 
