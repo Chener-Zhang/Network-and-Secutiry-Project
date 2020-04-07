@@ -9,9 +9,9 @@ import java.net.Socket;
 
 class TGS implements Server {
 
-    String File_Server_ID;
-    String TGS_ID;
-    String Client_ID;
+    String File_Server_ID = "CIS3319SERVERID";
+    String TGS_ID = "CIS3319TGSID";
+    String Client_ID = "CIS3319USERID";
 
 
     public TGS() {
@@ -49,18 +49,38 @@ class TGS implements Server {
         }
         System.out.println(key);
 
-
+        //Decryption
         conventer cv = new conventer(cipher_text);
         byte[] in_byte = cv.breaker();
         Decrypt decrypt = new Decrypt();
         decrypt.Decrypt(in_byte, key);
 
 
+
+        Long TS_2 = System.currentTimeMillis() / 1000L;
+
+        String ticket_before_encryption = "";
+        key_generator Ktgs = new key_generator();
+        String server_key = Ktgs.keyToString();
+
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += server_key;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "Client ID " + Client_ID;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "TGS id " + TGS_ID;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "Time session " + TS_2;
+        ticket_before_encryption += "\n";
+
+        Encrypt encrypt = new Encrypt();
+        send_to_client.writeUTF("here is you new ticket to access Server\n\n" + encrypt.Encrypt(ticket_before_encryption, server_key) + "\nSave the decryption key:\n" + server_key);
+
+
         try {
             while (socket.isConnected()) {
                 send_to_client.writeUTF("you can type [quit] now ");
             }
-
 
             //close the socket
         } catch (Exception e) {
