@@ -8,17 +8,20 @@ import java.util.Base64;
 import java.util.Scanner;
 
 public class Decrypt {
-	
-  static  Cipher DESCipher;
-  static  KeyGenerator KEY_generator;
-  static  SecretKey myDesKey;
-  static byte[] textEncrypted;
-    
-	public static void Decrypt(byte[] input, String sk_string) {
+
+    static Cipher DESCipher;
+    static KeyGenerator KEY_generator;
+    static SecretKey myDesKey;
+    static byte[] textEncrypted;
+
+
+    public Decrypt() { }
+
+    public void Decrypt(byte[] input, String sk_string) {
         try {
-        	//Convert String to secret key
-        	byte[] decodedKey = Base64.getDecoder().decode(sk_string);
-        	SecretKeySpec originalKey = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
+            //Convert String to secret key
+            byte[] decodedKey = Base64.getDecoder().decode(sk_string);
+            SecretKeySpec originalKey = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
             //init the Mode
             DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
@@ -31,12 +34,12 @@ public class Decrypt {
 
             //Prints the text that has been decrypted
             System.out.println("Text Decryted : " + new String(textDecrypted));
-            
+
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
     }
-	
+	/*
 	public static void main(String[] args) {
 		
 		Scanner in= new Scanner(System.in);
@@ -54,4 +57,6 @@ public class Decrypt {
     	Decrypt(in_byte,sk);
 		
 	}
+
+	 */
 }

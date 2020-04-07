@@ -50,6 +50,7 @@ class AS implements Server {
             send_to_client.writeUTF("please try again client id");
             Client_input = input_from_system.readUTF();
         }
+
         ID_C = Client_input;
 
         //get the tgs id
