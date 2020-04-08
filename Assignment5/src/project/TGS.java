@@ -6,13 +6,16 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class TGS implements Server {
 
     String File_Server_ID = "CIS3319SERVERID";
     String TGS_ID = "CIS3319TGSID";
     String Client_ID = "CIS3319USERID";
-
+    int receive_Life_time;
+    int receive_timesesstion;
 
     public TGS() {
     }
@@ -53,8 +56,36 @@ class TGS implements Server {
         conventer cv = new conventer(cipher_text);
         byte[] in_byte = cv.breaker();
         Decrypt decrypt = new Decrypt();
-        decrypt.Decrypt(in_byte, key);
+        String infomation = decrypt.Decrypt(in_byte, key);
+        System.out.println(infomation);
 
+
+        Pattern time_session_pattern = Pattern.compile("Time_session\\d+");
+        Matcher time_session_matcher = time_session_pattern.matcher(infomation);
+
+        if (time_session_matcher.find()) {
+            System.out.println(time_session_matcher.group());
+            Pattern number = Pattern.compile("\\d+");
+            Matcher matcher = number.matcher(time_session_matcher.group());
+            if (matcher.find()) {
+                System.out.println(matcher.group());
+                int result = Integer.parseInt(matcher.group());
+                receive_timesesstion = result;
+            }
+        }
+
+        Pattern lifetimeI_pattern = Pattern.compile("Life_TimeI\\d+");
+        Matcher lifetimeI_matcher = lifetimeI_pattern.matcher(infomation);
+        if (lifetimeI_matcher.find()) {
+            System.out.println(lifetimeI_matcher.group());
+            Pattern number = Pattern.compile("\\d+");
+            Matcher matcher = number.matcher(lifetimeI_matcher.group());
+            if (matcher.find()) {
+                System.out.println(matcher.group());
+                int result = Integer.parseInt(matcher.group());
+                receive_Life_time = result;
+            }
+        }
 
 
         Long TS_2 = System.currentTimeMillis() / 1000L;
