@@ -25,10 +25,10 @@ public class Client {
         //client.AS_connection_start(5000);
 
         //2
-        client.TGS_connection_start(5000);
+        //client.TGS_connection_start(5000);
 
         //3
-        //client.Server_connection_start(5000);
+        client.Server_connection_start(5000);
 
     }
 

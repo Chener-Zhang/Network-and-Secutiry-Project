@@ -11,10 +11,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class File_Server implements Server{
-    String id;
+
     long receive_timesesstion;
     long receive_Life_time;
-    long timelife = 86400;
     public File_Server(){
 
     }
@@ -56,7 +55,7 @@ public class File_Server implements Server{
         byte[] in_byte = cv.breaker();
         Decrypt decrypt = new Decrypt();
         String infomation = decrypt.Decrypt(in_byte, key);
-
+        System.out.println(infomation);
         Pattern time_session_pattern = Pattern.compile("Time_session\\d+");
         Matcher time_session_matcher = time_session_pattern.matcher(infomation);
 
@@ -72,7 +71,7 @@ public class File_Server implements Server{
             }
         }
 
-        Pattern lifetimeI_pattern = Pattern.compile("Life_TimeI\\d+");
+        Pattern lifetimeI_pattern = Pattern.compile("Life_TimeII\\d+");
         Matcher lifetimeI_matcher = lifetimeI_pattern.matcher(infomation);
         if (lifetimeI_matcher.find()) {
             //System.out.println(lifetimeI_matcher.group());
@@ -88,6 +87,13 @@ public class File_Server implements Server{
         }
 
 
+        System.out.println("Time session: " + receive_timesesstion);
+        System.out.println("Time lifeTime: " + receive_Life_time);
+        long current_unixTime = Instant.now().getEpochSecond();
+        current_unixTime -=1586000000;
+        System.out.println("current unix time :" + current_unixTime);
+        System.out.println("current_unixTime - receive_timesesstion = " + (current_unixTime - receive_timesesstion));
+        System.out.println("current_unixTime - receive_timesesstion < lifetime " + (current_unixTime - receive_timesesstion < receive_Life_time));
 
 
 

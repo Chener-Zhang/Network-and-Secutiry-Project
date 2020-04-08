@@ -109,18 +109,13 @@ class TGS implements Server {
         key_generator Ktgs = new key_generator();
         String server_key = Ktgs.keyToString();
 
-        ticket_before_encryption += "\n";
-        ticket_before_encryption += server_key;
-        ticket_before_encryption += "\n";
         ticket_before_encryption += "Client ID " + Client_ID;
         ticket_before_encryption += "\n";
         ticket_before_encryption += "TGS id " + TGS_ID;
         ticket_before_encryption += "\n";
-        ticket_before_encryption += "Time session " + TS_2;
+        ticket_before_encryption += "Time_session" + TS_2;
         ticket_before_encryption += "\n";
-        ticket_before_encryption += "Server ID " + File_Server_ID;
-        ticket_before_encryption += "\n";
-        ticket_before_encryption += "Life_TimeI86400";//send the lifetime
+        ticket_before_encryption += "Life_TimeII60000";//send the lifetime
         ticket_before_encryption += "\n";
 
 
