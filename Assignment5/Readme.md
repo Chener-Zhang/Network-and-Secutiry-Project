@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 * Enter the Client ID and TGS ID
 * The time will automatically send
 
-![Client_from_AS](Client_from_AS.png)
+![Client_from_AS](Client_from_AS.PNG)
 
 * on AS side
   
