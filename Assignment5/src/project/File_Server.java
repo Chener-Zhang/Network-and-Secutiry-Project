@@ -95,8 +95,12 @@ public class File_Server implements Server{
         System.out.println("current_unixTime - receive_timesesstion = " + (current_unixTime - receive_timesesstion));
         System.out.println("current_unixTime - receive_timesesstion < lifetime " + (current_unixTime - receive_timesesstion < receive_Life_time));
 
+        if((current_unixTime - receive_timesesstion < receive_Life_time)){
+            send_to_client.writeUTF("The ticket is valid and you are allow to access the file now");
 
-
+        }else{
+            send_to_client.writeUTF("The ticket is not valid");
+        }
 
         try {
             while (socket.isConnected()) {
