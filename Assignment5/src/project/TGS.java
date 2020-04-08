@@ -12,7 +12,7 @@ class TGS implements Server {
     String File_Server_ID = "CIS3319SERVERID";
     String TGS_ID = "CIS3319TGSID";
     String Client_ID = "CIS3319USERID";
-    long timelife = 60;
+
 
     public TGS() {
     }

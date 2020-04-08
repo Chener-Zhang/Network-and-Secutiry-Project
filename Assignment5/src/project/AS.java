@@ -14,6 +14,7 @@ class AS implements Server {
     long TS_1;
 
 
+
     String get_id_c = "Enter the Client ID";
     String get_id_tgs = "Enter the TGS ID";
 
@@ -78,6 +79,8 @@ class AS implements Server {
         ticket_before_encryption += "TGS id " + ID_TGS;
         ticket_before_encryption += "\n";
         ticket_before_encryption += "Time session " + TS_1;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "LifeTimeI60";//send the lifetime
         ticket_before_encryption += "\n";
 
 
