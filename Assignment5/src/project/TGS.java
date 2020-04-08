@@ -72,6 +72,7 @@ class TGS implements Server {
                 //System.out.println(matcher.group());
                 long result = Long.parseLong(matcher.group());
                 receive_timesesstion = result;
+                receive_timesesstion -= 1586000000;
             }
         }
 
@@ -86,15 +87,17 @@ class TGS implements Server {
                 long result = Long.parseLong(matcher.group());
                 receive_Life_time = result;
                 receive_Life_time += Instant.now().getEpochSecond();
+                receive_Life_time -= 1586000000;
             }
         }
 
         System.out.println("Time session: " + receive_timesesstion);
-        System.out.println("Time lifeTime : " + receive_Life_time);
+        System.out.println("Time lifeTime: " + receive_Life_time);
         long current_unixTime = Instant.now().getEpochSecond();
+        current_unixTime -=1586000000;
         System.out.println("current unix time :" + current_unixTime);
-
-        System.out.println(current_unixTime - receive_timesesstion);
+        System.out.println("current_unixTime - receive_timesesstion = " + (current_unixTime - receive_timesesstion));
+        System.out.println("current_unixTime - receive_timesesstion < lifetime " + (current_unixTime - receive_timesesstion < receive_Life_time));
 
 
 
@@ -116,6 +119,8 @@ class TGS implements Server {
         ticket_before_encryption += "Time session " + TS_2;
         ticket_before_encryption += "\n";
         ticket_before_encryption += "Server ID " + File_Server_ID;
+        ticket_before_encryption += "\n";
+        ticket_before_encryption += "Life_TimeI86400";//send the lifetime
         ticket_before_encryption += "\n";
 
 

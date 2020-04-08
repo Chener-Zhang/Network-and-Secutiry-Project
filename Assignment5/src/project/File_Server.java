@@ -6,9 +6,14 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.Instant;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class File_Server implements Server{
     String id;
+    long receive_timesesstion;
+    long receive_Life_time;
     long timelife = 86400;
     public File_Server(){
 
@@ -50,7 +55,42 @@ public class File_Server implements Server{
         conventer cv = new conventer(cipher_text);
         byte[] in_byte = cv.breaker();
         Decrypt decrypt = new Decrypt();
-        decrypt.Decrypt(in_byte, key);
+        String infomation = decrypt.Decrypt(in_byte, key);
+
+        Pattern time_session_pattern = Pattern.compile("Time_session\\d+");
+        Matcher time_session_matcher = time_session_pattern.matcher(infomation);
+
+        if (time_session_matcher.find()) {
+            //System.out.println(time_session_matcher.group());
+            Pattern number = Pattern.compile("\\d+");
+            Matcher matcher = number.matcher(time_session_matcher.group());
+            if (matcher.find()) {
+                //System.out.println(matcher.group());
+                long result = Long.parseLong(matcher.group());
+                receive_timesesstion = result;
+                receive_timesesstion -= 1586000000;
+            }
+        }
+
+        Pattern lifetimeI_pattern = Pattern.compile("Life_TimeI\\d+");
+        Matcher lifetimeI_matcher = lifetimeI_pattern.matcher(infomation);
+        if (lifetimeI_matcher.find()) {
+            //System.out.println(lifetimeI_matcher.group());
+            Pattern number = Pattern.compile("\\d+");
+            Matcher matcher = number.matcher(lifetimeI_matcher.group());
+            if (matcher.find()) {
+                //System.out.println(matcher.group());
+                long result = Long.parseLong(matcher.group());
+                receive_Life_time = result;
+                receive_Life_time += Instant.now().getEpochSecond();
+                receive_Life_time -= 1586000000;
+            }
+        }
+
+
+
+
+
 
         try {
             while (socket.isConnected()) {
