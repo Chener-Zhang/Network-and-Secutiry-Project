@@ -15,7 +15,8 @@ public class Decrypt {
     static byte[] textEncrypted;
 
 
-    public Decrypt() { }
+    public Decrypt() {
+    }
 
     public String Decrypt(byte[] input, String sk_string) {
         try {
