@@ -42,7 +42,7 @@ Svf+TNC/pAg=
 ### step 2
 * copy the cypher text and the key
 * Run the TGS Server and past the cypher and key
-* AS will return the valid ticket if the time is valid 
+* ATGS will return the valid ticket if the time is valid 
 
 ![](Valid_ticket_from_AS.png)
 * on TGS
@@ -60,3 +60,10 @@ key:
 
 eSk0SWh/vz4=
 ```
+
+### step 3
+* copy the cypher text and the key
+* Run the File Server and past the cypher and key
+* File Server will return the valid ticket if the time is valid 
+![](Client_from_AS.png)
+![](Valid_ticket_from_AS.png)
