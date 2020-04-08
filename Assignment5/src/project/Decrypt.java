@@ -17,7 +17,7 @@ public class Decrypt {
 
     public Decrypt() { }
 
-    public void Decrypt(byte[] input, String sk_string) {
+    public String Decrypt(byte[] input, String sk_string) {
         try {
             //Convert String to secret key
             byte[] decodedKey = Base64.getDecoder().decode(sk_string);
@@ -33,30 +33,15 @@ public class Decrypt {
             byte[] textDecrypted = DESCipher.doFinal(input);
 
             //Prints the text that has been decrypted
-            System.out.println("Text Decryted : " + new String(textDecrypted));
+            //System.out.println("Text Decryted : " + new String(textDecrypted));
+
+            String s = new String(textDecrypted);
+            return s;
 
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException | NoSuchAlgorithmException e) {
             e.printStackTrace();
+            return null;
         }
     }
-	/*
-	public static void main(String[] args) {
-		
-		Scanner in= new Scanner(System.in);
-    	System.out.println("Cipher?");
-    	String input= in.nextLine();
-    	System.out.println("Secret Key?");
-    	String sk= in.nextLine();
 
-    	String gb= input;
-        conventer cv = new conventer(gb);
-
-        byte[] in_byte = cv.breaker();
-
-    	System.out.println("Your Cipher: " + input);
-    	Decrypt(in_byte,sk);
-		
-	}
-
-	 */
 }
