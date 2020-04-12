@@ -14,3 +14,19 @@ RSA command:
 
         RSA_decryption rsa_decryption = new RSA_decryption(privateKey,e_test);
         System.out.println("after decrypted :" + new String(rsa_decryption.decrypt()));
+
+
+DES command:
+        DES_key_generator des_key = new DES_key_generator();
+        String key = des_key.keyToString();
+
+        String message = "hello world my friend";
+        System.out.println("raw text "  + message);
+        DES_encryption des_encryption = new DES_encryption();
+        byte[] encrypted = des_encryption.Encrypt(message, key);
+        System.out.println("encrypted " + encrypted);
+
+
+        DES_decryption des_decryption = new DES_decryption();
+        byte[] decrypted = des_decryption.Decrypt(encrypted,key);
+        System.out.println("decrypted " + new String(decrypted));
