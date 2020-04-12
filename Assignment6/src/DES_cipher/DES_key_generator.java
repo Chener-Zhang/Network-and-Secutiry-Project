@@ -2,8 +2,6 @@ package DES_cipher;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 

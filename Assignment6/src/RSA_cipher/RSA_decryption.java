@@ -17,6 +17,7 @@ public class RSA_decryption {
         this.cipher = Cipher.getInstance("RSA");
         this.cipher.init(Cipher.DECRYPT_MODE, privateKey);
     }
+
     public byte[] decrypt() throws BadPaddingException, IllegalBlockSizeException {
         byte[] text_byte = text_before_decrypted;
         return cipher.doFinal(text_before_decrypted);

@@ -4,9 +4,7 @@ import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 import java.util.Base64;
-import java.util.Scanner;
 
 
 public class DES_encryption {
@@ -17,9 +15,10 @@ public class DES_encryption {
     static byte[] textEncrypted;
 
 
-    public DES_encryption(){
+    public DES_encryption() {
 
     }
+
     public byte[] Encrypt(String user_input, String sk_string) {
         try {
             //Convert String to secret key
