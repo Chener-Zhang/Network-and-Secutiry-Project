@@ -20,7 +20,7 @@ public class DES_encryption {
     public DES_encryption(){
 
     }
-    public String Encrypt(String user_input, String sk_string) {
+    public byte[] Encrypt(String user_input, String sk_string) {
         try {
             //Convert String to secret key
             byte[] decodedKey = Base64.getDecoder().decode(sk_string);
@@ -39,8 +39,7 @@ public class DES_encryption {
             textEncrypted = DESCipher.doFinal(text);
 
             //Return the text;
-            String new_return = Arrays.toString(textEncrypted);
-            return new_return;
+            return textEncrypted;
 
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException e) {
             e.printStackTrace();

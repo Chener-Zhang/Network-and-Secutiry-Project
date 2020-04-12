@@ -1,6 +1,7 @@
 package project;
 
 
+import DES_cipher.DES_decryption;
 import DES_cipher.DES_encryption;
 import DES_cipher.DES_key_generator;
 import RSA_cipher.RSA_decryption;
@@ -24,12 +25,15 @@ public class Main {
         String key = des_key.keyToString();
 
         String message = "hello world my friend";
-
+        System.out.println("raw text "  + message);
         DES_encryption des_encryption = new DES_encryption();
-        System.out.println(des_encryption.Encrypt(message,key));
+        byte[] encrypted = des_encryption.Encrypt(message, key);
+        System.out.println("encrypted " + encrypted);
 
 
-
+        DES_decryption des_decryption = new DES_decryption();
+        byte[] decrypted = des_decryption.Decrypt(encrypted,key);
+        System.out.println("decrypted " + new String(decrypted));
 
     }
 }
