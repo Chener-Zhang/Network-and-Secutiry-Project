@@ -92,12 +92,6 @@ public class Client {
     }
 
 
-
-
-
-
-
-
     public void AS_connection_start(int port) throws IOException {
         String input = "";
 

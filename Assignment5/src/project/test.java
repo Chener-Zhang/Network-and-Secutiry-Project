@@ -8,7 +8,7 @@ public class test {
     public static void main(String[] args) {
         Pattern p = Pattern.compile("string\\d+");
         Matcher m = p.matcher("string1234more567string890");
-        while(m.find()) {
+        while (m.find()) {
             System.out.println(m.group());
         }
 

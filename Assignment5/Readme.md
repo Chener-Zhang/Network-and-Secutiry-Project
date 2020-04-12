@@ -21,11 +21,11 @@ import java.util.regex.Pattern;
 * Enter the Client ID and TGS ID
 * The time will automatically send
 
-![Client_from_AS](Client_from_AS.png)
+![Client_from_AS](Client_from_AS.PNG)
 
 * on AS side
   
-![](On_AS_Side_to_client.png)
+![](On_AS_Side_to_client.PNG)
 
 ```
 Example cipher:
@@ -44,10 +44,10 @@ Svf+TNC/pAg=
 * Run the TGS Server and past the cypher and key
 * ATGS will return the valid ticket if the time is valid 
 
-![](Valid_ticket_from_AS.png)
+![](Valid_ticket_from_AS.PNG)
 * on TGS
 
-![](On_TGS_side.png)
+![](On_TGS_side.PNG)
 
 
 ```
@@ -65,5 +65,5 @@ eSk0SWh/vz4=
 * copy the cypher text and the key
 * Run the File Server and past the cypher and key
 * File Server will return the valid ticket if the time is valid 
-![](Client_from_AS.png)
-![](Valid_ticket_from_AS.png)
+![](Client_from_AS.PNG)
+![](Valid_ticket_from_AS.PNG)

@@ -14,7 +14,6 @@ class AS implements Server {
     long TS_1;
 
 
-
     String get_id_c = "Enter the Client ID";
     String get_id_tgs = "Enter the TGS ID";
 

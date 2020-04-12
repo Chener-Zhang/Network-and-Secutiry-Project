@@ -1,6 +1,5 @@
 package project;
 
-
 import DES_cipher.DES_decryption;
 import DES_cipher.DES_encryption;
 import DES_cipher.DES_key_generator;
@@ -20,8 +19,8 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, BadPaddingException, IllegalBlockSizeException {
-
-
-
     }
 }
+
+
+

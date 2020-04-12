@@ -94,17 +94,16 @@ class TGS implements Server {
         System.out.println("Time session: " + receive_timesesstion);
         System.out.println("Time lifeTime: " + receive_Life_time);
         long current_unixTime = Instant.now().getEpochSecond();
-        current_unixTime -=1586000000;
+        current_unixTime -= 1586000000;
         System.out.println("current unix time :" + current_unixTime);
         System.out.println("current_unixTime - receive_timesesstion = " + (current_unixTime - receive_timesesstion));
         System.out.println("current_unixTime - receive_timesesstion < lifetime " + (current_unixTime - receive_timesesstion < receive_Life_time));
 
-        if((current_unixTime - receive_timesesstion < receive_Life_time)){
+        if ((current_unixTime - receive_timesesstion < receive_Life_time)) {
             send_to_client.writeUTF("The ticket is valid");
-        }else{
+        } else {
             send_to_client.writeUTF("The ticket is not valid");
         }
-
 
 
         Long TS_2 = System.currentTimeMillis() / 1000L;
