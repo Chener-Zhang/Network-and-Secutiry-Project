@@ -1,6 +1,8 @@
 package project;
 
 
+import DES_cipher.DES_encryption;
+import DES_cipher.DES_key_generator;
 import RSA_cipher.RSA_decryption;
 import RSA_cipher.RSA_encryption;
 import RSA_cipher.RSA_ket_generator;
@@ -17,18 +19,15 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, BadPaddingException, IllegalBlockSizeException {
-        RSA_ket_generator rsa_ket_generator = new RSA_ket_generator();
-        PublicKey publicKey = rsa_ket_generator.get_public_key();
-        PrivateKey privateKey = rsa_ket_generator.get_private_key();
 
-        String text = "hello world";
-        RSA_encryption rsa_encryption = new RSA_encryption(publicKey,text);
-        System.out.println("raw text :" + text);
-        byte[] e_test = rsa_encryption.encrypt();
-        System.out.println("after encrypted :" + e_test);
+        DES_key_generator des_key = new DES_key_generator();
+        String key = des_key.keyToString();
 
-        RSA_decryption rsa_decryption = new RSA_decryption(privateKey,e_test);
-        System.out.println("after decrypted :" + new String(rsa_decryption.decrypt()));
+        String message = "hello world my friend";
+
+        DES_encryption des_encryption = new DES_encryption();
+        System.out.println(des_encryption.Encrypt(message,key));
+
 
 
 
