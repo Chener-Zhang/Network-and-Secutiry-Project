@@ -7,15 +7,23 @@ import javax.crypto.NoSuchPaddingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.spec.InvalidKeySpecException;
+import java.util.Base64;
 
 public class RSA_decryption {
     private Cipher cipher;
     private byte[] text_before_decrypted;
 
-    public RSA_decryption(PrivateKey privateKey, byte[] cipher_text) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
+    public RSA_decryption(String privateKey, byte[] cipher_text) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
         this.text_before_decrypted = cipher_text;
         this.cipher = Cipher.getInstance("RSA");
-        this.cipher.init(Cipher.DECRYPT_MODE, privateKey);
+
+        byte[] public_key = Base64.getDecoder().decode(privateKey);
+        Byte_Key_Convert convert = new Byte_Key_Convert();
+        PrivateKey pb = convert.convert_private(public_key);
+
+        this.cipher.init(Cipher.DECRYPT_MODE, pb);
     }
 
     public byte[] decrypt() throws BadPaddingException, IllegalBlockSizeException {

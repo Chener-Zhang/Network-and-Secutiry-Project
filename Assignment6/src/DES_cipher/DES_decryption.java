@@ -1,21 +1,21 @@
 package DES_cipher;
 
-import javax.crypto.*;
-import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Scanner;
 
 public class DES_decryption {
 
     static Cipher DESCipher;
-    static KeyGenerator KEY_generator;
-    static SecretKey myDesKey;
-    static byte[] textEncrypted;
 
-
-    public DES_decryption() {
-    }
 
     public byte[] Decrypt(byte[] input, String sk_string) {
         try {
@@ -33,7 +33,7 @@ public class DES_decryption {
             byte[] textDecrypted = DESCipher.doFinal(input);
 
             //Prints the text that has been decrypted
-            //System.out.println("Text Decryted : " + new String(textDecrypted));
+            System.out.println("Text Decryted : " + new String(textDecrypted));
 
             return textDecrypted;
 

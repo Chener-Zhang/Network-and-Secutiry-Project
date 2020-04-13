@@ -5,21 +5,31 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import java.security.*;
+import java.security.spec.InvalidKeySpecException;
+import java.util.Arrays;
+import java.util.Base64;
 
 public class RSA_encryption {
 
     private String before_encrypted;
     private Cipher cipher;
 
-    public RSA_encryption(PublicKey publicKey, String text) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
+    public RSA_encryption(String publicKey, String text) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
         this.before_encrypted = text;
         this.cipher = Cipher.getInstance("RSA");
-        this.cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+
+        byte[] public_key = Base64.getDecoder().decode(publicKey);
+
+        Byte_Key_Convert convert = new Byte_Key_Convert();
+        PublicKey pb = convert.convert_public(public_key);
+        this.cipher.init(Cipher.ENCRYPT_MODE, pb);
     }
 
-    public byte[] encrypt() throws BadPaddingException, IllegalBlockSizeException {
+    public String encrypt() throws BadPaddingException, IllegalBlockSizeException {
         byte[] text_byte = before_encrypted.getBytes();
-        return cipher.doFinal(text_byte);
+        byte[] after = cipher.doFinal(text_byte);
+        String new_return = Arrays.toString(after);
+        return new_return;
     }
 }
 

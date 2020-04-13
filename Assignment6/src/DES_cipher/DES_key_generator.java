@@ -1,9 +1,9 @@
 package DES_cipher;
 
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
+import javax.crypto.*;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+import java.io.*;
 
 
 public class DES_key_generator {
@@ -11,6 +11,7 @@ public class DES_key_generator {
     KeyGenerator keyGen;
     SecretKey desKey;
     String encodedKey;
+
 
     public DES_key_generator() {
         try {
@@ -33,5 +34,6 @@ public class DES_key_generator {
             return "cannot get string";
         }
     }
+
 
 }
