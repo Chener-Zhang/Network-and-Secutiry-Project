@@ -6,11 +6,30 @@ RSA command:
         PublicKey publicKey = rsa_ket_generator.get_public_key();
         PrivateKey privateKey = rsa_ket_generator.get_private_key();
 
-        String text = "hello world";
-        RSA_encryption rsa_encryption = new RSA_encryption(publicKey,text);
-        System.out.println("raw text :" + text);
-        byte[] e_test = rsa_encryption.encrypt();
-        System.out.println("after encrypted :" + e_test);
+        byte[] privateKeyBytes = privateKey.getEncoded();
+        byte[] publicKeyBytes = publicKey.getEncoded();
+        KeyFactory kf = KeyFactory.getInstance("RSA"); // or "EC" or whatever
+        PrivateKey aPrivate = kf.generatePrivate(new PKCS8EncodedKeySpec(privateKeyBytes));
+        PublicKey aPublic = kf.generatePublic(new X509EncodedKeySpec(publicKeyBytes));
 
-        RSA_decryption rsa_decryption = new RSA_decryption(privateKey,e_test);
-        System.out.println("after decrypted :" + new String(rsa_decryption.decrypt()));
+        RSA_encryption rsa_encryption = new RSA_encryption(aPublic, "hello wolrd");
+
+        RSA_decryption rsa_decryption = new RSA_decryption(aPrivate, rsa_encryption.encrypt());
+        System.out.println(new String (rsa_decryption.decrypt()));
+
+
+
+DES command:
+        DES_key_generator des_key = new DES_key_generator();
+        String key = des_key.keyToString();
+
+        String message = "hello world my friend";
+        System.out.println("raw text "  + message);
+        DES_encryption des_encryption = new DES_encryption();
+        byte[] encrypted = des_encryption.Encrypt(message, key);
+        System.out.println("encrypted " + encrypted);
+
+
+        DES_decryption des_decryption = new DES_decryption();
+        byte[] decrypted = des_decryption.Decrypt(encrypted,key);
+        System.out.println("decrypted " + new String(decrypted));

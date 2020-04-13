@@ -13,12 +13,12 @@ public class RSA_ket_generator {
 
     }
 
-    public PublicKey get_public_key() {
-        return keyPair.getPublic();
+    public byte[] get_public_key() {
+        return keyPair.getPublic().getEncoded();
     }
 
-    public PrivateKey get_private_key() {
-        return keyPair.getPrivate();
+    public byte[] get_private_key() {
+        return keyPair.getPrivate().getEncoded();
     }
 
 
