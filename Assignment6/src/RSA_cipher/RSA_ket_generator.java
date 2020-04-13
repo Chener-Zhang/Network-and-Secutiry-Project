@@ -7,7 +7,10 @@ public class RSA_ket_generator {
     private KeyPair keyPair;
 
     public RSA_ket_generator() throws NoSuchAlgorithmException {
-        this.keyPair = KeyPairGenerator.getInstance("RSA").generateKeyPair();
+        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+        keyGen.initialize(1024);
+        keyPair = keyGen.generateKeyPair();
+
     }
 
     public PublicKey get_public_key() {
