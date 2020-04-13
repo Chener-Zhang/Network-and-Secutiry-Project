@@ -15,7 +15,7 @@ public class DES_Encryption {
    static  byte[] textEncrypted;
    
    
-    public static String Encrypt(String user_input, String sk_string) {
+    public String Encrypt(String user_input, String sk_string) {
         try {
         	//Convert String to secret key
         	byte[] decodedKey = Base64.getDecoder().decode(sk_string);

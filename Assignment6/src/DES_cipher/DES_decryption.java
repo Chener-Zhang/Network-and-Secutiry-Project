@@ -17,7 +17,7 @@ public class DES_decryption {
   static  Cipher DESCipher;
 
     
-	public static void Decrypt(byte[] input, String sk_string) {
+	public  byte[] Decrypt(byte[] input, String sk_string) {
         try {
         	//Convert String to secret key
         	byte[] decodedKey = Base64.getDecoder().decode(sk_string);
@@ -34,9 +34,12 @@ public class DES_decryption {
 
             //Prints the text that has been decrypted
             System.out.println("Text Decryted : " + new String(textDecrypted));
-            
+
+            return textDecrypted;
+
         } catch (IllegalBlockSizeException | InvalidKeyException | BadPaddingException | NoSuchPaddingException | NoSuchAlgorithmException e) {
             e.printStackTrace();
+            return null;
         }
     }
 

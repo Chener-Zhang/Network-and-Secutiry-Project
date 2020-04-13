@@ -6,6 +6,7 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
+import java.util.Arrays;
 import java.util.Base64;
 
 public class RSA_encryption {
@@ -24,9 +25,11 @@ public class RSA_encryption {
         this.cipher.init(Cipher.ENCRYPT_MODE, pb);
     }
 
-    public byte[] encrypt() throws BadPaddingException, IllegalBlockSizeException {
+    public String encrypt() throws BadPaddingException, IllegalBlockSizeException {
         byte[] text_byte = before_encrypted.getBytes();
-        return cipher.doFinal(text_byte);
+        byte[] after = cipher.doFinal(text_byte);
+        String new_return = Arrays.toString(after);
+        return new_return;
     }
 }
 

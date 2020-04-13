@@ -19,3 +19,14 @@ RSA command:
 
 
 
+DES command:
+
+        DES_Encryption des_encryption = new DES_Encryption();
+        String cipher = des_encryption.Encrypt("hello world","a2St6vgNnls=");
+        System.out.println(cipher);
+
+        conventer conventer = new conventer(cipher);
+        byte decipher[] = conventer.breaker();
+
+        DES_decryption des_decryption = new DES_decryption();
+        des_decryption.Decrypt(decipher,"a2St6vgNnls=");
