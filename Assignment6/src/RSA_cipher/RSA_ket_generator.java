@@ -25,7 +25,7 @@ public class RSA_ket_generator {
         return keyPair.getPrivate().getEncoded();
     }
 
-    public String public_key_ToString(){
+    public String public_key_ToString() {
         try {
             this.encodedKey_public_key = Base64.getEncoder().encodeToString(get_public_key());
             return this.encodedKey_public_key;
@@ -33,7 +33,8 @@ public class RSA_ket_generator {
             return "cannot get string";
         }
     }
-    public String private_key_ToString(){
+
+    public String private_key_ToString() {
         try {
             this.encodedKey_private_key = Base64.getEncoder().encodeToString(get_private_key());
             return this.encodedKey_private_key;

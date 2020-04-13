@@ -13,15 +13,15 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Scanner;
 
 public class DES_decryption {
-	
-  static  Cipher DESCipher;
 
-    
-	public  byte[] Decrypt(byte[] input, String sk_string) {
+    static Cipher DESCipher;
+
+
+    public byte[] Decrypt(byte[] input, String sk_string) {
         try {
-        	//Convert String to secret key
-        	byte[] decodedKey = Base64.getDecoder().decode(sk_string);
-        	SecretKeySpec originalKey = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
+            //Convert String to secret key
+            byte[] decodedKey = Base64.getDecoder().decode(sk_string);
+            SecretKeySpec originalKey = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
             //init the Mode
             DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 

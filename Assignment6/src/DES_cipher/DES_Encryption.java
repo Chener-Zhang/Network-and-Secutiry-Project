@@ -11,21 +11,21 @@ import java.util.Scanner;
 
 public class DES_Encryption {
 
-   static Cipher DESCipher;
-   static  byte[] textEncrypted;
-   
-   
+    static Cipher DESCipher;
+    static byte[] textEncrypted;
+
+
     public String Encrypt(String user_input, String sk_string) {
         try {
-        	//Convert String to secret key
-        	byte[] decodedKey = Base64.getDecoder().decode(sk_string);
-        	SecretKey originalKey = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
+            //Convert String to secret key
+            byte[] decodedKey = Base64.getDecoder().decode(sk_string);
+            SecretKey originalKey = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
             // Create the cipher type as DES
             DESCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
 
             // Initialize the cipher for encryption
             DESCipher.init(Cipher.ENCRYPT_MODE, originalKey);
-            
+
 
             //Turn the String of user_input to the byte mode
             byte[] text = user_input.getBytes();
@@ -42,7 +42,6 @@ public class DES_Encryption {
         }
         return null;
     }
-    
 
-    
+
 }
