@@ -1,6 +1,7 @@
 package RSA_cipher;
 
 import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.Signature;
 import java.util.Base64;
 
@@ -9,11 +10,22 @@ public class RSA_signature {
 
     }
 
-    public byte[] sign(String plainText, PrivateKey privateKey) throws Exception {
-        Signature privateSignature = Signature.getInstance("SHA256withRSA");
-        privateSignature.initSign(privateKey);
-        privateSignature.update(plainText.getBytes());
-        return privateSignature.sign();
+    public boolean sign(String plainText, String privateKey, String publicKey) throws Exception {
+        Signature sig = Signature.getInstance("SHA256withRSA");
+
+        //convert string to key
+        Byte_Key_Convert byte_key_convert = new Byte_Key_Convert();
+        PublicKey pubk = byte_key_convert.convert_public(publicKey);
+        PrivateKey prik = byte_key_convert.convert_private(privateKey);
+        //private key sign
+        sig.initSign(prik);
+        sig.update(plainText.getBytes());
+        byte[] signature = sig.sign();
+
+        //verify the public key
+        sig.initVerify(pubk);
+        sig.update(plainText.getBytes());
+        return sig.verify(signature);
     }
 
 }
