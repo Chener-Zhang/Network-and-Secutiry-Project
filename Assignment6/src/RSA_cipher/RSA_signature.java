@@ -10,7 +10,7 @@ public class RSA_signature {
 
     }
 
-    public boolean sign(String plainText, String privateKey, String publicKey) throws Exception {
+    public boolean sign(String privateKey, String publicKey) throws Exception {
         Signature sig = Signature.getInstance("SHA256withRSA");
 
         //convert string to key
@@ -19,12 +19,12 @@ public class RSA_signature {
         PrivateKey prik = byte_key_convert.convert_private(privateKey);
         //private key sign
         sig.initSign(prik);
-        sig.update(plainText.getBytes());
+
         byte[] signature = sig.sign();
 
         //verify the public key
         sig.initVerify(pubk);
-        sig.update(plainText.getBytes());
+
         return sig.verify(signature);
     }
 

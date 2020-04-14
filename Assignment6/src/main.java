@@ -23,7 +23,7 @@ public class main {
 
         String text = "hello world";
         RSA_signature rsa_signature = new RSA_signature();
-        System.out.println(rsa_signature.sign(text, private_key, public_key));
+        System.out.println(rsa_signature.sign(private_key, public_key));
         RSA_encryption rsa_encryption = new RSA_encryption(public_key,text);
         System.out.println(rsa_encryption.encrypt());
         String cipher = "[56, 37, -74, 118, -12, 49, 66, 106, -91, 42, -60, -9, -34, -113, 36, -128, -32, -10, -91, -112, -95, 9, 104, -114, -120, -11, -61, -127, -104, 6, 87, -92, 56, 126, 42, -78, 9, 50, -110, -92, 122, 72, -112, 10, -96, 69, -32, 79, -121, 123, 48, 0, 36, 91, 101, 48, -110, -4, 39, -85, 41, 95, 52, -59, -47, -97, 123, 118, -9, -86, -97, 11, -26, 108, 121, 39, 79, 118, -122, 34, 118, -87, -27, 62, -48, 15, 111, -104, -127, -22, 115, 101, 102, 14, -102, -11, 114, -86, 113, 48, -115, 120, -31, -74, 71, -32, -120, 5, 111, -104, 80, -72, -1, 54, -101, 65, -5, 32, 111, 59, -17, -114, 67, 28, 100, -67, -32, 106]";
