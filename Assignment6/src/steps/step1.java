@@ -44,6 +44,6 @@ public class step1 {
         RSA_encryption rsa_encryption = new RSA_encryption(AC_public_key,data);
         String cipher = rsa_encryption.encrypt();
         System.out.println(cipher);
-
+        System.out.println("save the cipher send to AC");
     }
 }
