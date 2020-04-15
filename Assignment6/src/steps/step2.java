@@ -52,7 +52,7 @@ public class step2 {
         }
 
 
-        TS_2 = System.currentTimeMillis() / 1000L;
+        TS_2 = ac.TS_2;
 
         RSA_key_generator rsa_key_generator = new RSA_key_generator();
 

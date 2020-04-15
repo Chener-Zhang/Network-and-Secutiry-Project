@@ -7,6 +7,11 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class Client {
+    public long TS_3 = System.currentTimeMillis() / 1000L;;
+    public String client_id = "ID-CLIENT";
+    public Client(){
+
+    }
     public static void main(String[] args) throws IOException {
         // Create client socket
         Socket s = new Socket("localhost", 5000);

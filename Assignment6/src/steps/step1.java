@@ -29,7 +29,7 @@ public class step1 {
         des_key = des_key_generator.keyToString();
         AC_public_key = server.AC_public_key;
         server_id = server.Server_ID;
-        TS_1 = System.currentTimeMillis() / 1000L;
+        TS_1 = server.TS_1;
         message = server.message;
 
         data += "message:" + message;
