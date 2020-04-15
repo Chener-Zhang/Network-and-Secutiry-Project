@@ -30,10 +30,7 @@ public class step1 {
         AC_public_key = server.AC_public_key;
         server_id = server.Server_ID;
         TS_1 = server.TS_1;
-        message = server.message;
 
-        data += "message:" + message;
-        data += "\n";
         data += "des_key:" + des_key;
         data += "\n";
         data += "server_id:" + server_id;
