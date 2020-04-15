@@ -1,8 +1,30 @@
 # Assignment 6
 
-## package i have created
-![](my_package.PNG)
 
+
+### The library i have used
+```
+import java.security.*;
+import java.util.Base64;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import java.security.*;
+import java.security.spec.InvalidKeySpecException;
+import java.util.Arrays;
+import java.security.PrivateKey;
+import java.security.NoSuchAlgorithmException;
+import java.security.InvalidKeyException;
+```
+### package i have created
+![](my_package.PNG)
+### RSA KEY GENERATOR
+![](rsa_key_generator.PNG)
+### RSA ENCRYPTION
+![](rsa_encryption.PNG)
+### RSA DECRYPTION
+![](rsa_decryption.PNG)
 ## Step 1:
 ```
 send:
