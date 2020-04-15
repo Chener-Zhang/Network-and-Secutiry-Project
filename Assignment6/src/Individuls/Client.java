@@ -11,6 +11,7 @@ public class Client {
     public String client_id = "ID-CLIENT";
     public String ip_address = "127.0.0.1";
     public int port_number = 5000;
+    public String request = "request";
 
     public long TS_5 = System.currentTimeMillis() / 1000L;
     public Client(){
