@@ -18,13 +18,13 @@ import java.security.NoSuchAlgorithmException;
 import java.security.InvalidKeyException;
 ```
 ### package i have created
-![](my_package.PNG)
+![](my_package.png)
 ### RSA KEY GENERATOR
-![](rsa_key_generator.PNG)
+![](rsa_key_generator.png)
 ### RSA ENCRYPTION
-![](rsa_encryption.PNG)
+![](rsa_encryption.png)
 ### RSA DECRYPTION
-![](rsa_decryption.PNG)
+![](rsa_decryption.png)
 ## Step 1:
 ```
 send:
@@ -36,40 +36,40 @@ AC
 ```
 
 setup the message which need to send
-![](Step_1.PNG)
+![](Step_1.png)
 get the cipher text with the following image and send through the server to AC
-![](step_1_output.PNG)
+![](step_1_output.png)
 
 ## Step 2
 
 enter the cipher to the console, let the CA encrypt decryp the cipher by RSA and encrypt by DES
 
-![](step_2.PNG)
+![](step_2.png)
 in the console you will get
-![](step2_output.PNG)
+![](step2_output.png)
 
 ## Step 3
 we will send the message to Client to Server again
-![](step3.PNG)
+![](step3.png)
 ## Step 4
 we will decrypte the previous message and store the public key
-![](step4.PNG)
+![](step4.png)
 here is the public and private key after the decryption(it only visible in Server Side)
-![](step4_output.PNG)
+![](step4_output.png)
 ## Step 5
 you will send the public key to encrypted the message and send to the server again by using RSA Algorithem
-![](step5.PNG)
+![](step5.png)
 then send the follow cipher to the server
-![](step5_output.PNG)
+![](step5_output.png)
 ## Step 6
 in order to get the message, you will need to use the private key to decrypted the message and re-generate a new DES key for the next encryption
-![](step6.PNG)
+![](step6.png)
 you will get the very detail imformation about what you received and just send 
-![](step6_output.PNG)
+![](step6_output.png)
 
 ## Step 7
 you will encrypted the mesaage again for the final delivery
-![](step7.PNG)
+![](step7.png)
 ## Step 8
 get the message from the final deliver
-![](step8.PNG)
+![](step8.png)
