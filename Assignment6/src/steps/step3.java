@@ -11,8 +11,9 @@ public class step3 {
 
         client_id =client.client_id;
         TS_3 = client.TS_3;
-        System.out.println("copy the message send to the server");
+        System.out.println("save the message and the KEY send to the server");
         System.out.println(client_id + " TS_3" + TS_3);
+
 
     }
 }

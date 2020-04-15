@@ -17,6 +17,8 @@ public class Server {
     public String message = "take cis3319 class this afternoon";
     public final String Server_ID = "ID-Server";
     public long TS_1 = System.currentTimeMillis() / 1000L;
+    public long TS_4 = System.currentTimeMillis() / 1000L;
+
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeySpecException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         Server server = new Server();

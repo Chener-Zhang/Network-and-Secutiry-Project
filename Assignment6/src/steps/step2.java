@@ -69,6 +69,7 @@ public class step2 {
         data_to_server +="\n";
         data_to_server += "TS_2:" + TS_2;
         //Wrap data;
+
         DES_Encryption des_encryption = new DES_Encryption();
         System.out.println("enter the des key");
         String key = sc.nextLine();

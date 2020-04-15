@@ -7,8 +7,12 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class Client {
-    public long TS_3 = System.currentTimeMillis() / 1000L;;
+    public long TS_3 = System.currentTimeMillis() / 1000L;
     public String client_id = "ID-CLIENT";
+    public String ip_address = "127.0.0.1";
+    public int port_number = 5000;
+
+    public long TS_5 = System.currentTimeMillis() / 1000L;
     public Client(){
 
     }
