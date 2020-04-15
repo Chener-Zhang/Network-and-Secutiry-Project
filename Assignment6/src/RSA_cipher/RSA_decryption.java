@@ -19,9 +19,8 @@ public class RSA_decryption {
         this.text_before_decrypted = cipher_text;
         this.cipher = Cipher.getInstance("RSA");
 
-        byte[] public_key = Base64.getDecoder().decode(privateKey);
         Byte_Key_Convert convert = new Byte_Key_Convert();
-        PrivateKey pb = convert.convert_private(public_key);
+        PrivateKey pb = convert.convert_private(privateKey);
 
         this.cipher.init(Cipher.DECRYPT_MODE, pb);
     }

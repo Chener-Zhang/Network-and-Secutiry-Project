@@ -4,13 +4,13 @@ package RSA_cipher;
 import java.security.*;
 import java.util.Base64;
 
-public class RSA_ket_generator {
+public class RSA_key_generator {
     private KeyPair keyPair;
 
     String encodedKey_public_key;
     String encodedKey_private_key;
 
-    public RSA_ket_generator() throws NoSuchAlgorithmException {
+    public RSA_key_generator() throws NoSuchAlgorithmException {
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
         keyGen.initialize(1024);
         keyPair = keyGen.generateKeyPair();

@@ -2,11 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd9928b5-de3f-41ad-83ac-9e92b38e6939" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/src/Individuls/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_file_generated.txt" beforeDir="false" afterPath="$PROJECT_DIR$/key_file_generated.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project0/key_generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project0/key_generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/DES_cipher/DES_decryption.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/DES_cipher/DES_decryption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/DES_cipher/DES_encryption.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/DES_cipher/DES_encryption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/DES_cipher/DES_key_generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/DES_cipher/DES_key_generator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/DES_cipher/conventer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/DES_cipher/conventer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/Individuls/AC.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/Individuls/AC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/Individuls/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/Individuls/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/META-INF/Assignment6.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/Byte_Key_Convert.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/Byte_Key_Convert.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/RSA_decryption.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/RSA_decryption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/RSA_encryption.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/RSA_encryption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/RSA_ket_generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/RSA_ket_generator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/RSA_signature.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/RSA_cipher/RSA_signature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/key_storage" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/key_storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/Individuls/AC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/Individuls/AC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/Individuls/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/Individuls/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/key_storage" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/key_storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +60,7 @@
       <recent name="C:\Users\chene\Desktop\version_2\src\project0" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Decrypt">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project0.Client" />
       <module name="version_2" />
@@ -66,13 +83,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Encrypt (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Encrypt" />
-      <module name="version_2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,20 +110,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project0.Server" />
+      <module name="version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project0.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Client" />
       <item itemvalue="Application.Decrypt" />
-      <item itemvalue="Application.Encrypt (1)" />
       <item itemvalue="Application.Encrypt" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Decrypt" />
         <item itemvalue="Application.Encrypt" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Encrypt (1)" />
-        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -151,25 +174,25 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="473" y="297" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.800@0.0.1280.800" timestamp="1586280593331" />
-    <state width="1238" height="212" key="GridCell.Tab.0.bottom" timestamp="1586280779573">
+    <state width="1238" height="79" key="GridCell.Tab.0.bottom" timestamp="1586902064060">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1586280779573" />
+    <state width="1238" height="79" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1586902064060" />
     <state width="1877" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580854662420" />
-    <state width="1238" height="212" key="GridCell.Tab.0.center" timestamp="1586280779571">
+    <state width="1238" height="79" key="GridCell.Tab.0.center" timestamp="1586902064059">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1586280779571" />
+    <state width="1238" height="79" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1586902064059" />
     <state width="1877" height="250" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580854662420" />
-    <state width="1238" height="212" key="GridCell.Tab.0.left" timestamp="1586280779570">
+    <state width="1238" height="79" key="GridCell.Tab.0.left" timestamp="1586902064059">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1586280779570" />
+    <state width="1238" height="79" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1586902064059" />
     <state width="1877" height="250" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580854662420" />
-    <state width="1238" height="212" key="GridCell.Tab.0.right" timestamp="1586280779572">
+    <state width="1238" height="79" key="GridCell.Tab.0.right" timestamp="1586902064060">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1586280779572" />
+    <state width="1238" height="79" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1586902064060" />
     <state width="1877" height="250" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580854662420" />
     <state width="1860" height="322" key="GridCell.Tab.1.bottom" timestamp="1580741315241">
       <screen x="0" y="0" width="1920" height="1040" />

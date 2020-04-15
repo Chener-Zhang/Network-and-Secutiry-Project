@@ -18,10 +18,8 @@ public class RSA_encryption {
         this.before_encrypted = text;
         this.cipher = Cipher.getInstance("RSA");
 
-        byte[] public_key = Base64.getDecoder().decode(publicKey);
-
         Byte_Key_Convert convert = new Byte_Key_Convert();
-        PublicKey pb = convert.convert_public(public_key);
+        PublicKey pb = convert.convert_public(publicKey);
         this.cipher.init(Cipher.ENCRYPT_MODE, pb);
     }
 
